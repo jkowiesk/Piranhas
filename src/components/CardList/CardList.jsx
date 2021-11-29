@@ -1,11 +1,11 @@
 import React from "react";
 import CourseCard from "../course-card/course-card.component.jsx";
 
-import "./card-list.styles.scss";
+import s from './CardList.module.scss';
 
-function CardList({ cards }) {
+const CardList = ({ cards }) =>  {
   return (
-    <div className="card-list">
+    <div className={s.wrapper}>
       {cards.map((card) => (
         <CourseCard front={card.front} />
       ))}
