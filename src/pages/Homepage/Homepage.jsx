@@ -1,14 +1,14 @@
 import React from "react";
 import { myCourses, marketCourses } from "../../courseCards.js";
-import Section from "../../components/section/section.component.jsx";
+import Section from "../../components/CardSection/CardSection";
 
-import "./homepage.styles.scss";
+import s from "./Homepage.module.scss";
 
 function randint(a) {
   return Math.floor(Math.random() * a);
 }
 
-function HomePage() {
+const HomePage = () => {
   let sets = myCourses.map((course) => course.sets[randint(3)]);
   console.log(sets);
   console.log(marketCourses);

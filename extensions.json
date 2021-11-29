@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "stylelint.vscode-stylelint",
+      "graphql.vscode-graphql",
+      "mrmlnc.vscode-scss",
+      "clinyong.vscode-css-modules"
+    ]
+  }

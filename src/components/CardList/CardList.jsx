@@ -1,5 +1,5 @@
 import React from "react";
-import CourseCard from "../course-card/course-card.component.jsx";
+import CourseCard from "../CourseCard/CourseCard";
 
 import s from './CardList.module.scss';
 

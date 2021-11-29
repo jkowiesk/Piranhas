@@ -1,9 +1,9 @@
 import React from "react";
-import CardList from "../card-list/card-list.component";
+import CardList from '../CardList/CardList';
 
-import "./section.styles.scss";
+import s from "./CardSection.module.scss";
 
-function Section({ front, cards }) {
+const Section = ({ front, cards }) => {
   return (
     <div>
       <h1>{front}</h1>

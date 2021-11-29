@@ -1,11 +1,11 @@
-import Header from "./components/header/header.component";
+import Header from "./components/Header/Header";
 import { Routes, Route } from "react-router-dom";
-import HomePage from "./pages/homepage/homepage.component";
-import MyCourses from "./pages/my-courses/my-courses.component";
+import HomePage from "./pages/Homepage/Homepage";
+import MyCourses from "./pages/MyCourses/MyCourses";
 
 import "./App.css";
 
-function App() {
+const App = () => {
   return (
     <div>
       <Header />

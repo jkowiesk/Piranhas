@@ -1,22 +1,26 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-import "./header.styles.scss";
+import s from "./Header.module.scss";
 
-function Header() {
+const Header = () => {
   return (
-    <div className="header">
-      <Link className="logo-container" to="/">
-        <img alt="piranha" className="logo" src="/assets/piranha.png" />
-      </Link>
-      <div className="categories">
-        <Link className="category" to="my-courses">
-          My Courses
-        </Link>
-        <Link className="category" to="marketCourses">
-          Market Courses
-        </Link>
-      </div>
+    <div className={s.header}>
+      <NavLink className={s.logoContainer} to="/">
+        <img alt="piranha" className={s.logo} src="/assets/piranha.png" />
+      </NavLink>
+      <ul className={s.categories}>
+        <li>
+          <NavLink to="my-courses" className={s.category} activeClassName={s.active}>
+            My Courses
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="marketCourses" className={s.category} activeClassName={s.active}>
+            Market Courses
+          </NavLink>
+        </li>
+      </ul>
     </div>
   );
 }

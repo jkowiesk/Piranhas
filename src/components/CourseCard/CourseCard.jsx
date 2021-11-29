@@ -1,8 +1,8 @@
 import React from "react";
 
-import s from "./CourseCard.modules.scss";
+import s from "./CourseCard.module.scss";
 
-const CourseCard = ({front}) => {
+const CourseCard = ({ front }) => {
   return (
     <div className={s.wrapper}>
       <h1 className={s.title}>{front}</h1>

@@ -1,10 +1,10 @@
 import React from "react";
-import Section from "../../components/section/section.component";
+import Section from "../../components/CardSection/CardSection";
 import { myCourses } from "../../courseCards.js";
 
-import "./my-courses.styles.scss";
+import s from "./MyCourses.module.scss";
 
-function MyCourses() {
+const MyCourses = () => {
   return (
     <div>
       {myCourses.map(({ front, sets }) => (
