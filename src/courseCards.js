@@ -1,11 +1,11 @@
 const myCourses = [
   {
     front: "History",
-    flashcards: [{ front: "1918" }, { front: "1920" }, { front: "1939" }],
+    sets: [{ front: "1918" }, { front: "1920" }, { front: "1939" }],
   },
   {
     front: "Biology",
-    flashcards: [
+    sets: [
       { front: "Photosynthesis" },
       { front: "Animal" },
       { front: "Heart" },
@@ -13,15 +13,15 @@ const myCourses = [
   },
   {
     front: "Angielski",
-    flashcards: [{ front: "Milk" }, { front: "Cow" }, { front: "Mouse" }],
+    sets: [{ front: "Milk" }, { front: "Cow" }, { front: "Mouse" }],
   },
   {
     front: "IT",
-    flashcards: [{ front: "MAC OS" }, { front: "POSIX" }, { front: "ps -ax" }],
+    sets: [{ front: "MAC OS" }, { front: "POSIX" }, { front: "ps -ax" }],
   },
   {
     front: "Japanese",
-    flashcards: [{ front: "百万" }, { front: "お金" }, { front: "お客様" }],
+    sets: [{ front: "百万" }, { front: "お金" }, { front: "お客様" }],
   },
 ];
 
