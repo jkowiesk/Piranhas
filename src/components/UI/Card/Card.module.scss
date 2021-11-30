@@ -1,0 +1,15 @@
+.wrapper {
+    position: relative;
+}
+
+.content {
+    position: absolute;
+    top: 0;
+    left: -50%;
+    transform: translateX(50%);
+}
+
+.title {
+    font-size: 32px;
+    font-weight: bold;
+}

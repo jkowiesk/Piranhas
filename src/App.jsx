@@ -1,17 +1,19 @@
-import Header from "./components/header/header.component";
+import Header from "./components/Header/Header";
 import { Routes, Route } from "react-router-dom";
-import HomePage from "./pages/homepage/homepage.component";
-import MyCourses from "./pages/my-courses/my-courses.component";
+import HomePage from "./pages/Homepage/Homepage";
+import MyCourses from "./pages/MyCourses/MyCourses";
 
 import "./App.css";
+import AddCard from "./pages/AddCard/AddCard";
 
-function App() {
+const App = () => {
   return (
     <div>
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/my-courses" element={<MyCourses />} />
+        <Route path="/add-card" element={<AddCard />} />
       </Routes>
     </div>
   );
