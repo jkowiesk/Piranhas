@@ -1,6 +1,6 @@
 import React from "react";
 import { myCourses, marketCourses } from "../../mocks/courseCards";
-import CardSection from "../../components/CardSection/CardSection";
+import ItemSection from "../../components/ItemSection/ItemSection";
 
 import s from "./Homepage.module.scss";
 
@@ -9,15 +9,15 @@ function randint(a) {
 }
 
 const HomePage = () => {
-  let sets = myCourses.map((course) => course.sets[randint(3)]);
+  let sets = myCourses.map((course) => course.items[randint(3)]);
   console.log(sets);
   console.log(marketCourses);
   return (
     <div>
-      <CardSection title="My Sets" cards={sets} />
-      <CardSection title="Market Sets" cards={marketCourses} />
+      <ItemSection name="My Sets" items={sets} />
+      <ItemSection name="Market Sets" items={marketCourses} />
     </div>
   );
-}
+};
 
 export default HomePage;
