@@ -1,15 +1,17 @@
 import React from "react";
-import Section from "../../components/CardSection/CardSection";
-import { myCourses } from "../../courseCards.js";
+import CardSection from "../../components/CardSection/CardSection";
+import { items } from "../../mocks/courseCards.js";
 
 import s from "./MyCourses.module.scss";
 
 const MyCourses = () => {
+  const courses = items.map(item => {
+    return <CardSection title={item.folder} cards={item.cards} />
+  })
+
   return (
     <div>
-      {myCourses.map(({ front, sets }) => (
-        <Section front={front} cards={sets} />
-      ))}
+      {courses}
     </div>
   );
 }

@@ -4,6 +4,7 @@ import HomePage from "./pages/Homepage/Homepage";
 import MyCourses from "./pages/MyCourses/MyCourses";
 
 import "./App.css";
+import AddCard from "./pages/AddCard/AddCard";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/my-courses" element={<MyCourses />} />
+        <Route path="/add-card" element={<AddCard />} />
       </Routes>
     </div>
   );

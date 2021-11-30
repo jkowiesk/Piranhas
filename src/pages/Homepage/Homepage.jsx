@@ -1,6 +1,6 @@
 import React from "react";
-import { myCourses, marketCourses } from "../../courseCards.js";
-import Section from "../../components/CardSection/CardSection";
+import { myCourses, marketCourses } from "../../mocks/courseCards";
+import CardSection from "../../components/CardSection/CardSection";
 
 import s from "./Homepage.module.scss";
 
@@ -14,8 +14,8 @@ const HomePage = () => {
   console.log(marketCourses);
   return (
     <div>
-      <Section front="My Sets" cards={sets} />
-      <Section front="Market Sets" cards={marketCourses} />
+      <CardSection title="My Sets" cards={sets} />
+      <CardSection title="Market Sets" cards={marketCourses} />
     </div>
   );
 }

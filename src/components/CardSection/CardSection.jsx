@@ -3,13 +3,13 @@ import CardList from '../CardList/CardList';
 
 import s from "./CardSection.module.scss";
 
-const Section = ({ front, cards }) => {
+const CardSection = ({ title, cards }) => {
   return (
     <div>
-      <h1>{front}</h1>
+      <h1>{title}</h1>
       <CardList cards={cards} />
     </div>
   );
 }
 
-export default Section;
+export default CardSection;

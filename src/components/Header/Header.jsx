@@ -11,6 +11,16 @@ const Header = () => {
       </NavLink>
       <ul className={s.categories}>
         <li>
+          <NavLink to="" className={s.category} activeClassName={s.active}>
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="add-card" className={s.category} activeClassName={s.active}>
+            Add Card
+          </NavLink>
+        </li>
+        <li>
           <NavLink to="my-courses" className={s.category} activeClassName={s.active}>
             My Courses
           </NavLink>
