@@ -1,79 +1,76 @@
 export const items = [
   {
     folder: "Folder 1",
-    cards: [{
-        id: 'c1', //c1 - first card
-        front: 'front of the card',
-        back: 'back of the card'
+    cards: [
+      {
+        id: "c1", //c1 - first card
+        front: "front of the card",
+        back: "back of the card",
       },
       {
         folder: "Folder 1",
-        id: 'c2', //c1 - first card
-        front: 'front of the card',
-        back: 'back of the card'
+        id: "c2", //c1 - first card
+        front: "front of the card",
+        back: "back of the card",
       },
       {
-        id: 'c3', //c1 - first card
-        front: 'front of the card',
-        back: 'back of the card'
-      }
+        id: "c3", //c1 - first card
+        front: "front of the card",
+        back: "back of the card",
+      },
     ],
   },
   {
     folder: "Folder 2",
     cards: [
-    {
-      id: 'c1', //c1 - first card
-      front: 'front of the card',
-      back: 'back of the card'
-    },
-    {
-      id: 'c2', //c1 - first card
-      front: 'front of the card',
-      back: 'back of the card'
-    },
-    {
-      id: 'c3', //c1 - first card
-      front: 'front of the card',
-      back: 'back of the card'
-    }
-  ],
+      {
+        id: "c1", //c1 - first card
+        front: "front of the card",
+        back: "back of the card",
+      },
+      {
+        id: "c2", //c1 - first card
+        front: "front of the card",
+        back: "back of the card",
+      },
+      {
+        id: "c3", //c1 - first card
+        front: "front of the card",
+        back: "back of the card",
+      },
+    ],
   },
-]
+];
 
-export const folders = ['Folder 1', 'Folder 2'];
+export const folders = ["Folder 1", "Folder 2"];
 
 export const myCourses = [
   {
-    front: "History",
-    sets: [{ front: "1918" }, { front: "1920" }, { front: "1939" }],
+    name: "History",
+    items: [{ name: "1918" }, { name: "1920" }, { name: "1939" }],
   },
   {
-    front: "Biology",
-    sets: [
-      { front: "Photosynthesis" },
-      { front: "Animal" },
-      { front: "Heart" },
-    ],
+    name: "Biology",
+    items: [{ name: "Photosynthesis" }, { name: "Animal" }, { name: "Heart" }],
   },
   {
-    front: "Angielski",
-    sets: [{ front: "Milk" }, { front: "Cow" }, { front: "Mouse" }],
+    name: "Angielski",
+    items: [{ name: "Milk" }, { name: "Cow" }, { name: "Mouse" }],
   },
   {
-    front: "IT",
-    sets: [{ front: "MAC OS" }, { front: "POSIX" }, { front: "ps -ax" }],
+    name: "IT",
+    items: [{ name: "MAC OS" }, { name: "POSIX" }, { name: "ps -ax" }],
   },
   {
-    front: "Japanese",
-    sets: [{ front: "百万" }, { front: "お金" }, { front: "お客様" }],
+    name: "Japanese",
+    items: [{ name: "百万" }, { name: "お金" }, { name: "お客様" }],
   },
 ];
 
 export const marketCourses = [
-  { front: "Geology" },
-  { front: "Earth" },
-  { front: "World" },
-  { front: "Żużel" },
-  { front: "Польский" },
+  { name: "Geology" },
+  { name: "Earth" },
+  { name: "World" },
+  { name: "Żużel" },
+  { name: "Польский" },
 ];
