@@ -11,44 +11,18 @@ const Header = () => {
         <h1 className={s.title}>Piranhas</h1>
       </NavLink>
       <ul className={s.categories}>
-<<<<<<< HEAD
         <li>
           <NavLink exact to="add-card" className={s.category} activeClassName={s.active}>
-=======
-        {/* <li>
-          <NavLink to="" className={s.category} activeClassName={s.active}>
-            Home
+            Add Card
           </NavLink>
         </li>
         <li>
-          <NavLink to="add-card" className={s.category} activeClassName={s.active}>
->>>>>>> master
-            Add Card
-          </NavLink>
-        </li> */}
-        <li>
-<<<<<<< HEAD
           <NavLink exact to="my-courses" className={s.category} activeClassName={s.active}>
-=======
-          <NavLink
-            to="my-courses"
-            className={s.category}
-            activeClassName={s.active}
-          >
->>>>>>> master
             My Courses
           </NavLink>
         </li>
         <li>
-<<<<<<< HEAD
           <NavLink exact to="marketCourses" className={s.category} activeClassName={s.active}>
-=======
-          <NavLink
-            to="marketCourses"
-            className={s.category}
-            activeClassName={s.active}
-          >
->>>>>>> master
             Market Courses
           </NavLink>
         </li>
