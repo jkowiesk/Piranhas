@@ -3,11 +3,11 @@ import CardList from '../CardList/CardList';
 
 import s from "./CardSection.module.scss";
 
-const CardSection = ({ title, cards }) => {
+const CardSection = ({ title, items }) => {
   return (
     <div>
       <h1>{title}</h1>
-      <CardList cards={cards} />
+      <CardList cards={items} />
     </div>
   );
 }
