@@ -1,0 +1,12 @@
+@import 'public/assets/styles/utils/vars.module.scss';
+
+.button {
+    background: $color_light_red;
+    border-radius: 15px;
+    color: $color_basic_white;
+    height: 50px;
+    padding: 10px 35px;
+    font-size: 24px;
+    font-weight: 700;
+    border: none;
+}

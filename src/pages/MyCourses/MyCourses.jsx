@@ -1,16 +1,21 @@
 import React from "react";
-import ItemSection from "../../components/ItemSection/ItemSection.jsx";
+import AddCardButton from "../../components/AddCardButton/AddCardButton";
+import ItemSection from "../../components/ItemSection/ItemSection";
 import { myCourses } from "../../mocks/courseCards.js";
 
 import s from "./MyCourses.module.scss";
 
 const MyCourses = () => {
-  console.log(myCourses);
   const courses = myCourses.map(({ name, items }) => {
     return <ItemSection name={name} items={items} />;
   });
 
-  return <div>{courses}</div>;
+  return <div>
+    {courses}
+    <div className={s.button}>
+      <AddCardButton/>
+    </div>
+  </div>
 };
 
 export default MyCourses;

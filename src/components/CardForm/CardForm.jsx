@@ -28,7 +28,7 @@ const CardForm = () => {
                 <Select options={options} />
             </div>
         </div>
-        <button > Subbmit </button>
+        <button type="button"> Subbmit </button>
     </form>
 }
 

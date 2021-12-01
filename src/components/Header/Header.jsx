@@ -12,11 +12,6 @@ const Header = () => {
       </NavLink>
       <ul className={s.categories}>
         <li>
-          <NavLink exact to="add-card" className={s.category} activeClassName={s.active}>
-            Add Card
-          </NavLink>
-        </li>
-        <li>
           <NavLink exact to="my-courses" className={s.category} activeClassName={s.active}>
             My Courses
           </NavLink>

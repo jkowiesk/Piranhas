@@ -4,7 +4,7 @@ import MyCourses from "./pages/MyCourses/MyCourses";
 
 import "./App.css";
 import AddCard from "./pages/AddCard/AddCard";
-import Layout from "./components/UI/Card/Layout/Layout";
+import Layout from "./components/UI/Layout/Layout";
 
 const App = () => {
   return (
