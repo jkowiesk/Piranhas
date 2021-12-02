@@ -7,7 +7,7 @@ const ItemSection = ({ name, items }) => {
   return (
     <div className={s.wrapper}>
       <h1 className={s.title}>{name}</h1>
-      <ItemList items={items} />
+      <ItemList items={items} className={s.items}/>
     </div>
   );
 };
