@@ -7,19 +7,17 @@ import s from "./MyCourses.module.scss";
 
 const MyCourses = () => {
   const courses = myCourses.map(({ name, items }) => {
-    return <ItemSection name={name} items={items} />;
+    return (
+      <ItemSection name={name} items={items} routeUrl={name.toLowerCase()} />
+    );
   });
 
   return (
-  <div className={s.wrapper}>
     <div>
       {courses}
+      <AddCardButton link="add-course" />
     </div>
-    <div className={s.button}>
-      <AddCardButton/>
-    </div>
-  </div>
-  )
+  );
 };
 
 export default MyCourses;

@@ -3,9 +3,9 @@ import clsx from 'clsx';
 import { Link } from 'react-router-dom';
 
 
-const AddCardButton = (className) => {
+const AddCardButton = (className, link) => {
     return (
-    <Link to="/add-card">
+    <Link to={link}>
     <button type="button" className={clsx(s.button, className)} onClick={() => {}}>
         Add New Flashcard
     </button>

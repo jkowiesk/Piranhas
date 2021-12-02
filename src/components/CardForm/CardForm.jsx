@@ -1,18 +1,21 @@
-import s from './CardForm.module.scss';
-import Select from 'react-select';
-import { folders } from '../../mocks/courseCards';
+import s from "./CardForm.module.scss";
+import Select from "react-select";
+import { myCourses } from "../../mocks/courseCards";
 
 const CardForm = () => {
-    const options = folders.map(folder => {
-        return {value: folder, label: folder}
-    });
+  let setsName = myCourses
+    .map((course) => course.items.map((item) => item.name))
+    .flat();
 
+  const options = setsName.map((name) => {
+    return { value: name, label: name };
+  });
 
-    const submitHandler = event => {
-        event.preventDefault();
+  const submitHandler = (event) => {
+    event.preventDefault();
 
-        console.log("submitted");
-    }
+    console.log("submitted");
+  };
 
     return <form onSubmit={submitHandler} className={s.form}>
         <div>
@@ -33,6 +36,7 @@ const CardForm = () => {
             <button type="button" className={s.button}> Subbmit </button>
         </div>
     </form>
-}
+  );
+};
 
 export default CardForm;

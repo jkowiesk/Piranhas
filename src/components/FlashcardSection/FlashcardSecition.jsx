@@ -1,13 +1,12 @@
 import React from "react";
 import ItemList from "../ItemList/ItemList";
-import ItemName from "../ItemName/ItemName";
 
 import s from "./ItemSection.module.scss";
 
-const ItemSection = ({ name, items, routeUrl }) => {
+const ItemSection = ({ name, flashcards }) => {
   return (
-    <div className={s.wrapper}>
-      {name !== "" && <ItemName name={name} routeUrl={routeUrl} />}
+    <div>
+      <h1>{name}</h1>
       <ItemList items={items} />
     </div>
   );
