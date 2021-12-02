@@ -10,12 +10,16 @@ const MyCourses = () => {
     return <ItemSection name={name} items={items} />;
   });
 
-  return <div>
-    {courses}
+  return (
+  <div className={s.wrapper}>
+    <div>
+      {courses}
+    </div>
     <div className={s.button}>
       <AddCardButton/>
     </div>
   </div>
+  )
 };
 
 export default MyCourses;

@@ -5,8 +5,8 @@ import s from "./ItemSection.module.scss";
 
 const ItemSection = ({ name, items }) => {
   return (
-    <div>
-      <h1>{name}</h1>
+    <div className={s.wrapper}>
+      <h1 className={s.title}>{name}</h1>
       <ItemList items={items} />
     </div>
   );
