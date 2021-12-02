@@ -1,15 +1,14 @@
-import s from './AddCardButton.module.scss';
-import { Link } from 'react-router-dom';
+import s from "./AddCardButton.module.scss";
+import { Link } from "react-router-dom";
 
-
-const AddCardButton = ({link}) => {
-    return (
+const AddCardButton = ({ label, link }) => {
+  return (
     <Link to={link}>
-    <button type="button" className={s.button} onClick={() => {}}>
-        Add New Flashcard
-    </button>
+      <button type="button" className={s.button} onClick={() => {}}>
+        {label}
+      </button>
     </Link>
-    )
-}
+  );
+};
 
 export default AddCardButton;

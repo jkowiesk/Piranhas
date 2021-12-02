@@ -15,7 +15,7 @@ const SetManager = () => {
   return (
     <div>
       <ItemSection name="" items={items.flat()} link={params.courseName} />
-      <AddCardButton link="add-set" />
+      <AddCardButton label="Add New Set" link="add-set" />
     </div>
   );
 };
