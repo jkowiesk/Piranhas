@@ -14,21 +14,32 @@ const Header = () => {
         <li>
           <NavLink
             exact
-            to="my-courses"
+            to="/my-courses"
             className={s.category}
             activeClassName={s.active}
           >
             My Courses
           </NavLink>
         </li>
+
         <li>
           <NavLink
             exact
-            to="market-courses"
+            to="/market"
             className={s.category}
             activeClassName={s.active}
           >
-            Market Courses
+            Market
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            exact
+            to="/card-form"
+            className={s.category}
+            activeClassName={s.active}
+          >
+            Card Form
           </NavLink>
         </li>
       </ul>

@@ -1,5 +1,5 @@
 import React from "react";
-import { myCourses, marketCourses } from "../../mocks/courseCards";
+import { myCourses, marketSets } from "../../mocks/courseCards";
 import ItemSection from "../../components/ItemSection/ItemSection";
 
 import s from "./Homepage.module.scss";
@@ -14,7 +14,7 @@ const HomePage = () => {
   return (
     <div>
       <ItemSection name="My Sets" items={sets} />
-      <ItemSection name="Market Sets" items={marketCourses} />
+      <ItemSection name="Market Sets" items={marketSets} />
     </div>
   );
 };

@@ -6,14 +6,20 @@ import "./App.css";
 import AddCourse from "./pages/AddCourse/AddCourse";
 import Layout from "./components/UI/Layout/Layout";
 import SetManager from "./pages/SetManager/SetManager";
+import AddSet from "./pages/AddSet/AddSet";
+import CardFormPage from "./pages/CardFormPage/CardFormPage";
+import Market from "./pages/Market/Market";
 
 const App = () => {
   return (
     <Layout>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/my-courses" element={<MyCourses />}></Route>
+        <Route path="/my-courses" element={<MyCourses />} />
+        <Route path="/card-form" element={<CardFormPage />} />
+        <Route path="/market" element={<Market />} />
         <Route path="/my-courses/:courseName" element={<SetManager />} />
+        <Route path="/my-courses/:courseName/add-set" element={<AddSet />} />
         <Route path="/my-courses/add-course" element={<AddCourse />} />
       </Routes>
     </Layout>
