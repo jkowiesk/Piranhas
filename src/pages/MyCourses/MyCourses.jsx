@@ -15,7 +15,9 @@ const MyCourses = () => {
   return (
     <div>
       {courses}
-      <AddCardButton link="add-course" />
+      <div className={s.button}>
+      <AddCardButton link="add-course"/>
+      </div>
     </div>
   );
 };

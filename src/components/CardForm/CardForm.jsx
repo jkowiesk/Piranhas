@@ -36,7 +36,6 @@ const CardForm = () => {
             <button type="button" className={s.button}> Subbmit </button>
         </div>
     </form>
-  );
 };
 
 export default CardForm;
