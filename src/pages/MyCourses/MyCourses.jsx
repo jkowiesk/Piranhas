@@ -16,7 +16,7 @@ const MyCourses = () => {
     <div>
       {courses}
       <div className={s.button}>
-      <AddCardButton link="add-course"/>
+        <AddCardButton label="Add New Course" link="add-course" />
       </div>
     </div>
   );
