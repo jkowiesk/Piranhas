@@ -1,17 +1,12 @@
-.wrapper {
-  position: fixed;
-  height: 80px;
-  width: 80px;
-  bottom: 30px;
-  right: 30px;
-  border-radius: 50%;
-  background-color: #ed5858;
+@import 'public/assets/styles/utils/vars.module.scss';
 
-  h1 {
-    position: relative;
-    color: #222;
-    font-size: 4rem;
-    margin: auto;
-    text-align: center;
-  }
+.button {
+    background: $color_light_red;
+    border-radius: 15px;
+    color: $color_basic_white;
+    height: 50px;
+    padding: 10px 35px;
+    font-size: 24px;
+    font-weight: 700;
+    border: none;
 }

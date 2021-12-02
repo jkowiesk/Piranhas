@@ -1,6 +1,6 @@
 import React from "react";
-import AddCardButton from "../../components/AddCardButton/AddCardButton.jsx";
-import ItemSection from "../../components/ItemSection/ItemSection.jsx";
+import AddCardButton from "../../components/AddCardButton/AddCardButton";
+import ItemSection from "../../components/ItemSection/ItemSection";
 import { myCourses } from "../../mocks/courseCards.js";
 
 import s from "./MyCourses.module.scss";
@@ -15,7 +15,9 @@ const MyCourses = () => {
   return (
     <div>
       {courses}
-      <AddCardButton link="add-course" />
+      <div className={s.button}>
+      <AddCardButton link="add-course"/>
+      </div>
     </div>
   );
 };

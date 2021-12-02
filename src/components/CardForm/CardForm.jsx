@@ -17,24 +17,25 @@ const CardForm = () => {
     console.log("submitted");
   };
 
-  return (
-    <form onSubmit={submitHandler}>
-      <div>
+    return <form onSubmit={submitHandler} className={s.form}>
         <div>
-          <label htmlFor="front">Card Front</label>
-          <input type="text" id="front" />
+            <div className={s.inputBlock}>
+                <label htmlFor="front">Card Front</label>
+                <input type="text" id="front" className={s.input}/>
+            </div>
+            <div className={s.inputBlock}>
+                <label htmlFor="back">Card Back</label>
+                <input type="text" id="back" className={s.input}/> 
+            </div>
+            <div className={s.inputBlock}>
+                <Select options={options} />
+            </div>
         </div>
-        <div>
-          <label htmlFor="back">Card Back</label>
-          <input type="text" id="back" />
+        <div className={s.inputBlock}>
+            <h3>Select folder</h3>
+            <button type="button" className={s.button}> Subbmit </button>
         </div>
-        <div>
-          <Select options={options} />
-        </div>
-      </div>
-      <button> Subbmit </button>
     </form>
-  );
 };
 
 export default CardForm;

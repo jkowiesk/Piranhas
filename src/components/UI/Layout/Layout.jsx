@@ -1,14 +1,11 @@
-import { Fragment } from "react";
-import Header from "../../Header/Header";
-import s from "./Layout.module.scss";
+import Header from '../../Header/Header';
+import s from './Layout.module.scss';
 
 const Layout = (props) => {
-  return (
-    <Fragment>
-      <Header />
-      <main className={s.main}>{props.children}</main>
-    </Fragment>
-  );
-};
+    return <div className={s.wrapper}>
+        <Header />
+        <main className={s.main}>{props.children}</main>
+    </div>
+}
 
 export default Layout;
