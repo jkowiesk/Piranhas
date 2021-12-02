@@ -1,4 +1,4 @@
-@import 'public/assets/styles/utils/vars.module.scss';
+@import "public/assets/styles/utils/vars.module.scss";
 
 .header {
   height: 80px;
@@ -37,6 +37,8 @@
   text-decoration: none;
 }
 
-a.active, .category:hover, .category:active {
+a.active,
+.category:hover,
+.category:active {
   color: $color_light_red;
 }

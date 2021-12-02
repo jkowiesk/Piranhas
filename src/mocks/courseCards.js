@@ -67,7 +67,7 @@ export const myCourses = [
   },
 ];
 
-export const marketCourses = [
+export const marketSets = [
   { name: "Geology" },
   { name: "Earth" },
   { name: "World" },
