@@ -10,8 +10,7 @@ function randint(a) {
 
 const HomePage = () => {
   let sets = myCourses.map((course) => course.items[randint(3)]);
-  console.log(sets);
-  console.log(marketCourses);
+
   return (
     <div>
       <ItemSection name="My Sets" items={sets} />
