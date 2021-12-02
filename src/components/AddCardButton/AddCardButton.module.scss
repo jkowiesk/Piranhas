@@ -1,0 +1,17 @@
+.wrapper {
+  position: fixed;
+  height: 80px;
+  width: 80px;
+  bottom: 30px;
+  right: 30px;
+  border-radius: 50%;
+  background-color: #ed5858;
+
+  h1 {
+    position: relative;
+    color: #222;
+    font-size: 4rem;
+    margin: auto;
+    text-align: center;
+  }
+}
