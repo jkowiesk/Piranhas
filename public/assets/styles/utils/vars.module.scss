@@ -1,4 +1,5 @@
-/* 
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap");
+/*
 Colors
 */
 $color_white: #fff;
@@ -6,6 +7,7 @@ $color_black: #000;
 $color_basic_black: rgb(26, 26, 26);
 $color_basic_white: rgb(241, 241, 241);
 $color_background_white: rgb(223, 223, 223);
+$color_gray: grey;
 $color_dark_green: #255d5d;
 $color_light_red: #ed5858;
 
@@ -18,3 +20,8 @@ $grid_gutter: 25px;
 Z-indexes
 */
 $zIndex_header: 1000;
+
+/*
+font-families
+*/
+$font_family: "PT Sans Narrow", sans-serif;

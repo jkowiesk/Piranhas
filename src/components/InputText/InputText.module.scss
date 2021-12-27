@@ -1,0 +1,49 @@
+@import "public/assets/styles/utils/vars.module.scss";
+
+@mixin shrinkLabel {
+  top: -14px;
+  font-size: 12px;
+  color: $color_basic_black;
+}
+
+.root {
+  position: relative;
+  margin: 45px 0;
+
+  .inputText {
+    background: none;
+    color: $color_basic_black;
+    font-size: 18px;
+    padding: 10px;
+    display: block;
+    width: 30%;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid $color_gray;
+    margin: 25px 0;
+    background-color: $color_basic_white;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus ~ .inputLabel {
+      @include shrinkLabel();
+    }
+  }
+
+  .inputLabel {
+    color: $color_basic_black;
+    font-size: 16px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 300ms ease all;
+
+    &.shrink {
+      @include shrinkLabel();
+    }
+  }
+}

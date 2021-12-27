@@ -43,6 +43,9 @@ const Header = () => {
           </NavLink>
         </li>
       </ul>
+      <NavLink className={s.accountContainer} to="/signIn">
+        <h1 className={s.accountLabel}>Log In / Register</h1>
+      </NavLink>
     </div>
   );
 };

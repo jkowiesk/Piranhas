@@ -6,14 +6,23 @@
   height: 80px;
   width: 100%;
   display: flex;
+  justify-content: space-between;
+  text-align: center;
   z-index: $zIndex_header;
   background-color: $color_basic_black;
+  color: $color_white;
 }
 
 .logoContainer {
   display: flex;
   align-items: center;
   padding-left: 30px;
+}
+
+.accountContainer {
+  display: flex;
+  align-items: center;
+  padding-right: 30px;
 }
 
 .logo {
@@ -24,6 +33,12 @@
   font-size: 24px;
   font-weight: bold;
   color: $color_white;
+}
+
+.accountLabel {
+  color: $color_white;
+  font-size: 24px;
+  font-weight: 400;
 }
 
 .categories {
@@ -37,6 +52,7 @@
   font-size: large;
   color: $color_white;
   text-decoration: none;
+  font-weight: 400;
 }
 
 a.active,
