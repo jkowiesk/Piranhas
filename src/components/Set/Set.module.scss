@@ -1,0 +1,17 @@
+@import "public/assets/styles/utils/vars.module.scss";
+
+.wrapper {
+    border-radius: 8px;
+    background-color: $color_light_red;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    color: $color_white;
+    padding: 8px;
+}

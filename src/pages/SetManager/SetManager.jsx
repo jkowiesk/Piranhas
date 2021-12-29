@@ -1,7 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import AddCardButton from "../../components/AddCardButton/AddCardButton.jsx";
-import ItemSection from "../../components/ItemSection/ItemSection.jsx";
+import Set from "../../components/Set/Set.jsx";
+import Card from "../../components/UI/Card/Card.jsx";
 import { myCourses } from "../../mocks/courseCards.js";
 
 import s from "./SetManager.module.scss";
@@ -12,11 +13,17 @@ const SetManager = () => {
     ({ name }) => name.toLowerCase() === params.courseName.toLowerCase()
   );
 
+  const sets = items.map(({name}) => {
+    return <Set title={name} />
+  })
+
   return (
-    <div>
-      <ItemSection name="" items={items.flat()} link={params.courseName} />
-      <AddCardButton label="Add New Set" link="add-set" />
-    </div>
+    <Card title="Set Manager">
+      <div className={s.wrapper}>
+        <div className={s.sets}>{sets}</div>
+        <span className={s.button}><AddCardButton label="Add New Set" link="add-set"/> </span>
+      </div>
+    </Card>
   );
 };
 
