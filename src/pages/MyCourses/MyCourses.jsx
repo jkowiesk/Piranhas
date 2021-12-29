@@ -1,6 +1,7 @@
 import React from "react";
 import AddCardButton from "../../components/AddCardButton/AddCardButton";
-import ItemSection from "../../components/ItemSection/ItemSection";
+import SetSection from "../../components/SetSection/SetSection";
+import Card from "../../components/UI/Card/Card";
 import { myCourses } from "../../mocks/courseCards.js";
 
 import s from "./MyCourses.module.scss";
@@ -8,17 +9,17 @@ import s from "./MyCourses.module.scss";
 const MyCourses = () => {
   const courses = myCourses.map(({ name, items }) => {
     return (
-      <ItemSection name={name} items={items} routeUrl={name.toLowerCase()} />
+      <SetSection name={name} items={items} routeUrl={name.toLowerCase()} />
     );
   });
 
   return (
-    <div>
+    <Card title="My courses">
       {courses}
-      <div className={s.button}>
+      <span className={s.button}>
         <AddCardButton label="Add New Course" link="add-course" />
-      </div>
-    </div>
+      </span>
+    </Card>
   );
 };
 

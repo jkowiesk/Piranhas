@@ -7,7 +7,7 @@ import s from "./ItemSection.module.scss";
 const ItemSection = ({ name, items, routeUrl }) => {
   return (
     <div className={s.wrapper}>
-      {name !== "" && <ItemName name={name} routeUrl={routeUrl} />}
+      {name && <ItemName name={name} routeUrl={routeUrl} />}
       <ItemList items={items} />
     </div>
   );

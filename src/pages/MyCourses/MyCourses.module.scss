@@ -1,11 +1,18 @@
+@import "public/assets/styles/utils/vars.module.scss";
+
 .wrapper {
     height: 100%;
 }
 
+.title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    padding: 40px 0;
+}
+
 .button {
-    position: sticky;
-    display: flex;
-    justify-content: flex-end;
+    position: fixed;
     bottom: 80px;
-    right: 0px;
+    right: 80px;
 }

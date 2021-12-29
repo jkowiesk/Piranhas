@@ -1,12 +1,12 @@
 import s from "./Card.module.scss";
 
-const Card = ({ children, name }) => {
+const Card = ({ children, title }) => {
+  return (
   <div className={s.wrapper}>
-    <div className={s.content}>
-      <h1 className={s.title}>{name}</h1>
+      <h1 className={s.title}>{title}</h1>
       {children}
-    </div>
-  </div>;
+  </div>
+  )
 };
 
 export default Card;
