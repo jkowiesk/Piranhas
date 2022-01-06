@@ -13,15 +13,17 @@ const SetManager = () => {
     ({ name }) => name.toLowerCase() === params.courseName.toLowerCase()
   );
 
-  const sets = items.map(({name}) => {
-    return <Set title={name} />
-  })
+  const sets = items.map(({ name }) => {
+    return <Set title={name} routeUrl={name} />;
+  });
 
   return (
     <Card title="Set Manager">
       <div className={s.wrapper}>
         <div className={s.sets}>{sets}</div>
-        <span className={s.button}><AddCardButton label="Add New Set" link="add-set"/> </span>
+        <span className={s.button}>
+          <AddCardButton label="Add New Set" link="add-set" />{" "}
+        </span>
       </div>
     </Card>
   );

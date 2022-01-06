@@ -9,7 +9,11 @@ import s from "./MyCourses.module.scss";
 const MyCourses = () => {
   const courses = myCourses.map(({ name, items }) => {
     return (
-      <SetSection name={name} items={items} routeUrl={name.toLowerCase()} />
+      <SetSection
+        courseName={name}
+        items={items}
+        routeUrl={name.toLowerCase()}
+      />
     );
   });
 

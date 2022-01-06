@@ -1,10 +1,15 @@
 import { useState } from "react";
 import InputText from "../../components/InputText/InputText";
-import s from "./SignIn.module.scss";
 import CustomButton from "../../components/CustomButton/CustomButton";
 
+import s from "./SignUp.module.scss";
+
 const SiginIn = () => {
-  const [account, setAccount] = useState({ username: "", password: "" });
+  const [account, setAccount] = useState({
+    email: "",
+    username: "",
+    password: "",
+  });
 
   const handleChange = (e) => {
     const { value, name } = e.target;
@@ -16,8 +21,14 @@ const SiginIn = () => {
   };
 
   return (
-    <div className={s.signIn}>
-      <h2>Sign In</h2>
+    <div className={s.signUp}>
+      <h2>Sign Up</h2>
+      <InputText
+        type="email"
+        label="email"
+        value={account.email}
+        handleChange={handleChange}
+      />
       <InputText
         type="text"
         label="username"
@@ -30,7 +41,7 @@ const SiginIn = () => {
         value={account.password}
         handleChange={handleChange}
       />
-      <CustomButton type="submit">SIGN IN</CustomButton>
+      <CustomButton type="submit">SIGN UP</CustomButton>
     </div>
   );
 };

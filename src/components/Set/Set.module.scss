@@ -1,17 +1,37 @@
 @import "public/assets/styles/utils/vars.module.scss";
 
-.wrapper {
-    border-radius: 8px;
-    background-color: $color_light_red;
-    padding: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+.preview {
+  border-radius: 8px;
+  background-color: $color_light_red;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-.title {
+  .title {
     font-size: 20px;
     font-weight: bold;
     color: $color_white;
     padding: 8px;
+  }
+}
+
+.normal {
+  background: $color_light_red;
+  border-radius: 7px;
+  box-shadow: 0 4px 5px;
+  padding: 10px;
+  width: 240px;
+  margin: 16px;
+  padding: 50px 0;
+
+  .title {
+    color: $color_white;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    text-align: center;
+  }
 }
