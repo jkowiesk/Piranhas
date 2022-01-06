@@ -1,11 +1,16 @@
 import React from "react";
-import ItemCard from "../ItemCard/ItemCard";
-import clsx from 'clsx';
+import clsx from "clsx";
+import Set from "../Set/Set";
 
 import s from "./ItemList.module.scss";
 
 const ItemList = (props) => {
-  const itemList = props.items.map(({ name }) => <ItemCard name={name} />);
+  const itemList = props.items.map(({ courseName, name }) => {
+    let routeUrl = `${props.rootRoute}${courseName}/${name}`;
+    return (
+      <Set title={name} routeUrl={props.rootRoute ? routeUrl : `${name}`} />
+    );
+  });
 
   return <div className={clsx(s.wrapper, props.className)}>{itemList}</div>;
 };

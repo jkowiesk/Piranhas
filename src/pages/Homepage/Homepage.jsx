@@ -9,12 +9,16 @@ function randint(a) {
 }
 
 const HomePage = () => {
-  let sets = myCourses.map((course) => course.items[randint(3)]);
+  let sets = myCourses.map((course) => {
+    let num = randint(3);
+    return { courseName: course.name, name: course.items[num].name };
+  });
+  console.log(sets);
 
   return (
     <div>
-      <ItemSection name="My Sets" items={sets} />
-      <ItemSection name="Market Sets" items={marketSets} />
+      <ItemSection name="My Sets" items={sets} rootRoute="my-courses/" />
+      <ItemSection name="Market Sets" items={marketSets} rootRoute="" />
     </div>
   );
 };

@@ -4,14 +4,14 @@
   padding: 20px 35px 20px 35px;
   font-size: 18px;
   background-color: $color_basic_black;
-  color: $color_basic_white;
+  color: $color_light_red;
   font-family: "Open Sans Condensed";
   border: 1px solid transparent;
   font-weight: bolder;
   cursor: pointer;
 
   &:hover {
-    background-color: $color_basic_white;
+    background-color: $color_light_red;
     color: $color_basic_black;
     border: 1px solid $color_basic_black;
   }
