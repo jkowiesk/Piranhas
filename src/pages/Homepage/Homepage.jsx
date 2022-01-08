@@ -17,8 +17,8 @@ const HomePage = () => {
 
   return (
     <div>
-      <ItemSection name="My Sets" items={sets} rootRoute="my-courses/" />
-      <ItemSection name="Market Sets" items={marketSets} rootRoute="" />
+      <ItemSection name="My Sets" items={sets} rootRoute="my-courses/" type="carousel"/>
+      <ItemSection name="Market Sets" items={marketSets} rootRoute="" type="carousel" />
     </div>
   );
 };

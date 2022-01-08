@@ -3,7 +3,7 @@
 .header {
   position: sticky;
   top: 0;
-  height: 80px;
+  height: $height_header;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -27,6 +27,7 @@
   h1 {
     padding-left: 10px;
     padding-right: 10px;
+    font-size: 20px;
   }
 }
 
@@ -57,7 +58,8 @@
   font-size: large;
   color: $color_white;
   text-decoration: none;
-  font-weight: 400;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 a.active,
