@@ -1,4 +1,3 @@
-import React from "react";
 import { myCourses, marketSets } from "../../mocks/courseCards";
 import ItemSection from "../../components/ItemSection/ItemSection";
 
@@ -13,12 +12,21 @@ const HomePage = () => {
     let num = randint(3);
     return { courseName: course.name, name: course.items[num].name };
   });
-  console.log(sets);
 
   return (
     <div>
-      <ItemSection name="My Sets" items={sets} rootRoute="my-courses/" type="carousel"/>
-      <ItemSection name="Market Sets" items={marketSets} rootRoute="" type="carousel" />
+      <ItemSection
+        name="My Sets"
+        items={sets}
+        rootRoute="my-courses/"
+        type="carousel"
+      />
+      <ItemSection
+        name="Market Sets"
+        items={marketSets}
+        rootRoute="market/"
+        type="carousel"
+      />
     </div>
   );
 };

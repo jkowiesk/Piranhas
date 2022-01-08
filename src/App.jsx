@@ -17,11 +17,11 @@ const App = () => {
     <Layout>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/my-courses" element={<MyCourses />} />
-        <Route path="/card-form" element={<CardFormPage />} />
         <Route path="/market" element={<Market />} />
         <Route path="/signIn" element={<SiginIn />} />
         <Route path="/signUp" element={<SignUp />} />
+        <Route path="/card-form" element={<CardFormPage />} />
+        <Route path="/my-courses" element={<MyCourses />} />
         <Route path="/my-courses/:courseName" element={<SetManager />} />
         <Route path="/my-courses/:courseName/add-set" element={<AddSet />} />
         <Route path="/my-courses/add-course" element={<AddCourse />} />
