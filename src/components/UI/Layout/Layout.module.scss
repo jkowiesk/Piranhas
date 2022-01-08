@@ -2,13 +2,13 @@
 
 .wrapper {
   background-color: $color_background_white;
-  background-image: url("https://www.transparenttextures.com/patterns/circles.png");
+  height: 100vh;
 }
 
 .main {
   margin: 0 auto;
   position: relative;
-  height: 100%;
+  height: calc(100% - $height_header);
   background-color: $color_background_white;
   max-width: 1500px + 2 * $grid_gutter;
 }

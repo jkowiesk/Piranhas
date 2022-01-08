@@ -3,7 +3,7 @@ import { marketSets } from "../../mocks/courseCards";
 import s from "./Market.module.scss";
 
 const Market = () => {
-  return <ItemSection name="" items={marketSets} />;
+  return <ItemSection name="" items={marketSets} type="list"/>;
 };
 
 export default Market;
