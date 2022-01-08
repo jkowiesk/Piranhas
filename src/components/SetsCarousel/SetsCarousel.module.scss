@@ -9,7 +9,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    column-gap: 20px;
+    column-gap: $grid_gutter;
 }
 
 .slide {
@@ -19,10 +19,18 @@
 .gradient {
     position: absolute;
     top: 0;
-    right: 0;
     z-index: 9;
     width: 24%;
     height: 100%;
-    background: linear-gradient(270deg, $color_background_white 16.12%, rgba($color_background_white, 0) 100%);
     pointer-events: none;
+
+    &--left {
+        left: 0;
+        background: linear-gradient(90deg, $color_background_white 16.12%, rgba($color_background_white, 0) 100%);
+    }
+
+    &--right {
+        right: 0;
+        background: linear-gradient(270deg, $color_background_white 16.12%, rgba($color_background_white, 0) 100%);
+    }
 }

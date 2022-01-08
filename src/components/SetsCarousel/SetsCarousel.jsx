@@ -7,6 +7,7 @@ import s from './SetsCarousel.module.scss';
 
 import Set from "../Set/Set";
 import { useRef } from "react";
+import clsx from "clsx";
 
 export const SetsCarousel = (props) => {
     const sets = props.items.map(({ courseName, name }) => {
@@ -39,7 +40,8 @@ export const SetsCarousel = (props) => {
                 swiper.navigation.update();
             }}
             >
-                <div className={s.gradient}/>
+                <div className={clsx(s.gradient, s['gradient--left'])}/>
+                <div className={clsx(s.gradient, s['gradient--right'])}/>
                 {sets}
             </Swiper>
             <div ref={nextRef}>
