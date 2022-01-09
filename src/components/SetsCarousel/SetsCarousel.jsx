@@ -3,11 +3,16 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/components/navigation/navigation.min.css";
 import "swiper/swiper.min.css";
 import s from './SetsCarousel.module.scss';
-
-
 import Set from "../Set/Set";
 import { useRef } from "react";
 import clsx from "clsx";
+import Card from "../UI/Card/Card";
+
+import SwiperCore, {
+    Mousewheel
+  } from 'swiper/core';
+
+SwiperCore.use([Mousewheel])
 
 export const SetsCarousel = (props) => {
     const sets = props.items.map(({ courseName, name }) => {
@@ -23,7 +28,7 @@ export const SetsCarousel = (props) => {
     const prevRef = useRef(null);
 
     return ( 
-    <div className={s.wrapper}>
+    <Card className={s.wrapper} size="1">
         <div className={s.content}>
             <div ref={prevRef}>
                 <ArrowButton rotate={true}/>
@@ -33,6 +38,7 @@ export const SetsCarousel = (props) => {
                 freeMode={true}
                 slidesPerView={'auto'}
                 loop={true} 
+                mousewheel={true}
                 onInit={(swiper) => {
                 swiper.params.navigation.prevEl = prevRef.current;
                 swiper.params.navigation.nextEl = nextRef.current;
@@ -48,6 +54,6 @@ export const SetsCarousel = (props) => {
                 <ArrowButton />
             </div>
         </div>
-    </div>
+    </Card>
     );
 }

@@ -18,7 +18,7 @@ const MyCourses = () => {
   });
 
   return (
-    <Card title="My courses">
+    <Card title="My courses" size="1">
       {courses}
       <span className={s.button}>
         <AddCardButton label="Add New Course" link="add-course" />
