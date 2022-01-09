@@ -1,6 +1,7 @@
 import s from "./CardForm.module.scss";
 import Select from "react-select";
 import { myCourses } from "../../mocks/courseCards";
+import Card from "../UI/Card/Card";
 
 const CardForm = () => {
   let setsName = myCourses
@@ -18,6 +19,7 @@ const CardForm = () => {
   };
 
   return (
+    <Card size="2" title="Card Form">
     <form onSubmit={submitHandler} className={s.form}>
       <div>
         <div className={s.inputBlock}>
@@ -40,6 +42,7 @@ const CardForm = () => {
         </button>
       </div>
     </form>
+    </Card>
   );
 };
 

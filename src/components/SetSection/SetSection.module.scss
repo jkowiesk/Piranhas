@@ -8,13 +8,20 @@
     background-color: $color_basic_black;
     color: $color_white;
     border-radius: 8px;
-    width: 50%;
+    width: 100%;
     margin: 20px auto;
-    padding: 20px 16px;
+}
+
+.swiper {
+    display: flex;
+    align-items: center;
+    column-gap: $grid_gutter;
+    max-width: 100%;
 }
 
 .title {
-    font-size: 20px;
+    font-size: 24px;
+    padding-top: 32px;
     font-weight: bold;
     text-align: center;
     margin-bottom: 0;
@@ -28,7 +35,6 @@
     background-color: $color_white;
     border: 5px $color_white solid;
     border-radius: 8px;
-    width: 60%;
 }
 
 .button {

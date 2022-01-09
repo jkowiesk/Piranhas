@@ -3,7 +3,7 @@
 .form {
   position: relative;
   display: flex;
-  margin: 40px auto;
+  margin: 0 auto;
   border-radius: 10px;
   padding: 30px 50px;
   flex-direction: column;
@@ -30,7 +30,15 @@
 
 .button {
   background: $color_light_red;
+  color: $color_basic_white;
   text-align: center;
   font-size: 24px;
   padding: 10px 30px;
+  border-radius: 16px;
+  border: none;
+}
+
+.button:hover {
+  background-color: $color_basic_white;
+  color: $color_light_red;
 }
