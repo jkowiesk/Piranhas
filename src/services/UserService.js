@@ -8,6 +8,7 @@ class UserService {
   }
 
   getCourses() {
+    console.log(header());
     return axios.get(API_URL + "my-courses", { headers: header() });
   }
 
@@ -29,9 +30,9 @@ class UserService {
 }
 
 function header() {
-  const token = localStorage.getItem("token");
+  const token = JSON.parse(localStorage.getItem("token"));
   if (token) {
-    return { token: token };
+    return { Authorization: "Bearer " + token };
   } else {
     return {};
   }
