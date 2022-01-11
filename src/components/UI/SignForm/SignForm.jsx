@@ -9,4 +9,4 @@ export const SignForm = ({children, title, btnText, onBtnClick}) => {
         </div>
         <CustomButton type="submit" onClick={onBtnClick}>{btnText}</CustomButton>
     </Card>
-}
+} 
