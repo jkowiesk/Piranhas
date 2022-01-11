@@ -1,9 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import InputText from "../../components/InputText/InputText";
 import { SignForm } from "../../components/UI/SignForm/SignForm";
 
 const SiginIn = () => {
   const [account, setAccount] = useState({ username: "", password: "" });
+  const navigate = useNavigate();
+  const [IsLogged, setIsLogged] = useIsLogged();
 
   const handleChange = (e) => {
     const { value, name } = e.target;
@@ -12,6 +15,18 @@ const SiginIn = () => {
       ...prevValue,
       [name]: value,
     }));
+  };
+
+  const handleSignIn = (e) => {
+    AuthService.login(account.username, account.password)
+      .then((response) => {
+        setIsLogged(true);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+        navigate("/");
+      });
   };
 
   return (
@@ -28,7 +43,14 @@ const SiginIn = () => {
         value={account.password}
         handleChange={handleChange}
       />
+<<<<<<< HEAD
     </SignForm>
+=======
+      <CustomButton onClick={handleSignIn} type="submit">
+        SIGN IN
+      </CustomButton>
+    </div>
+>>>>>>> master
   );
 };
 
