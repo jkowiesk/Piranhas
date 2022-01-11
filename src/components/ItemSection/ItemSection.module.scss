@@ -1,14 +1,13 @@
-@import 'public/assets/styles/utils/vars.module.scss';
+@import "public/assets/styles/utils/vars.module.scss";
 
 .wrapper {
-    height: 100%;
-    padding: $grid_gutter 2 * $grid_gutter;
+  height: 100%;
 }
 
 .title {
-    font-size: 28px;
-    font-weight: bold;
-    text-align: center;
-    padding: 20px 0;
-    text-transform: uppercase;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px 0;
+  text-transform: uppercase;
 }

@@ -1,3 +1,6 @@
+import CustomButton from "../CustomButton/CustomButton";
+import InputText from "../InputText/InputText";
+import Card from "../UI/Card/Card";
 import s from "./SetForm.module.scss";
 
 const SetForm = () => {
@@ -8,15 +11,12 @@ const SetForm = () => {
   };
 
   return (
-    <form onSubmit={submitHandler}>
-      <div>
-        <div>
-          <label htmlFor="name">Set Name</label>
-          <input type="text" id="name" />
-        </div>
+    <Card onSubmit={submitHandler} size="2" title="Set Form" className={s.wrapper}>
+      <div className={s.content}>
+          <InputText label="Set Name" type="text"/>
       </div>
-      <button> Subbmit </button>
-    </form>
+      <CustomButton> Subbmit </CustomButton>
+    </Card>
   );
 };
 

@@ -1,36 +1,44 @@
 @import "public/assets/styles/utils/vars.module.scss";
 
 .wrapper {
-    position: relative;
-    width: 100%;
+  position: relative;
+  width: 100%;
 }
 
 .content {
-    position: relative;
-    display: flex;
-    align-items: center;
-    column-gap: $grid_gutter;
+  position: relative;
+  display: flex;
+  align-items: center;
+  column-gap: $grid_gutter;
 }
 
 .slide {
-    width: 240px;
+  width: 240px;
 }
 
 .gradient {
-    position: absolute;
-    top: 0;
-    z-index: 9;
-    width: 24%;
-    height: 100%;
-    pointer-events: none;
+  position: absolute;
+  top: 0;
+  z-index: $zIndex_gradient;
+  width: 24%;
+  height: 100%;
+  pointer-events: none;
 
-    &--left {
-        left: 0;
-        background: linear-gradient(90deg, $color_background_white 16.12%, rgba($color_background_white, 0) 100%);
-    }
+  &--left {
+    left: 0;
+    background: linear-gradient(
+      90deg,
+      $color_background_white 16.12%,
+      rgba($color_background_white, 0) 100%
+    );
+  }
 
-    &--right {
-        right: 0;
-        background: linear-gradient(270deg, $color_background_white 16.12%, rgba($color_background_white, 0) 100%);
-    }
+  &--right {
+    right: 0;
+    background: linear-gradient(
+      270deg,
+      $color_background_white 16.12%,
+      rgba($color_background_white, 0) 100%
+    );
+  }
 }

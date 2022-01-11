@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 import InputText from "../../components/InputText/InputText";
 import { SignForm } from "../../components/UI/SignForm/SignForm";
+import AuthService from "../../services/AuthService";
 
 const SiginIn = () => {
   const [account, setAccount] = useState({
@@ -8,6 +10,8 @@ const SiginIn = () => {
     username: "",
     password: "",
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { value, name } = e.target;
@@ -18,8 +22,20 @@ const SiginIn = () => {
     }));
   };
 
+  const handleSignUp = () => {
+    AuthService.register(account.email, account.username, account.password)
+      .then((response) => {
+        navigate('/');
+      })
+      .catch((error) => {
+        console.log(error)
+        navigate('/');
+      })
+
+  }
+
   return (
-    <SignForm title="Sign Up" btnText="SIGN UP">
+    <SignForm title="Sign Up" btnText="SIGN UP" onBtnClick={handleSignUp}>
       <InputText
         type="email"
         label="email"
