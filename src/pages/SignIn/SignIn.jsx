@@ -1,11 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import InputText from "../../components/InputText/InputText";
-import CustomButton from "../../components/CustomButton/CustomButton";
-import AuthService from "../../services/AuthService";
-import { useIsLogged } from "../../components/LoginContext/LoginContext";
-
-import s from "./SignIn.module.scss";
+import { SignForm } from "../../components/UI/SignForm/SignForm";
 
 const SiginIn = () => {
   const [account, setAccount] = useState({ username: "", password: "" });
@@ -34,8 +30,7 @@ const SiginIn = () => {
   };
 
   return (
-    <div className={s.signIn}>
-      <h2>Sign In</h2>
+    <SignForm title="Sign In" btnText="SIGN IN">
       <InputText
         type="text"
         label="username"
@@ -48,10 +43,7 @@ const SiginIn = () => {
         value={account.password}
         handleChange={handleChange}
       />
-      <CustomButton onClick={handleSignIn} type="submit">
-        SIGN IN
-      </CustomButton>
-    </div>
+    </SignForm>
   );
 };
 
