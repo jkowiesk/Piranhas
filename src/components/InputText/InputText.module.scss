@@ -1,14 +1,16 @@
 @import "public/assets/styles/utils/vars.module.scss";
 
 @mixin shrinkLabel {
-  top: -14px;
+  top: -22px;
   font-size: 12px;
   color: $color_basic_black;
 }
 
 .root {
   position: relative;
-  margin: 45px 0;
+  display: flex;
+  justify-content: center;
+  margin: 30px auto;
 
   .inputText {
     background: none;
@@ -20,7 +22,6 @@
     border: none;
     border-radius: 0;
     border-bottom: 1px solid $color_gray;
-    margin: 25px 0;
     background-color: $color_basic_white;
 
     &:focus {
@@ -38,7 +39,6 @@
     font-weight: normal;
     position: absolute;
     pointer-events: none;
-    left: 5px;
     top: 10px;
     transition: 300ms ease all;
 
