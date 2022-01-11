@@ -19,6 +19,8 @@ class UserService {
   }
 
   getCourseFlashcards(courseName, setName) {
+    const URL = API_URL + `my-courses/${courseName}/${setName}`;
+    console.log(URL);
     return axios.get(API_URL + `my-courses/${courseName}/${setName}`, {
       headers: header(),
     });

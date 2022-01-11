@@ -9,7 +9,6 @@ const Market = () => {
   const [marketSets, setMarketSets] = useState([]);
   useEffect(() => {
     UserService.getMarketSets().then((response) => {
-      console.log(response.data);
       setMarketSets(response.data);
     });
   }, []);
