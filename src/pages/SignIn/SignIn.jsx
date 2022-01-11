@@ -43,14 +43,7 @@ const SiginIn = () => {
         value={account.password}
         handleChange={handleChange}
       />
-<<<<<<< HEAD
     </SignForm>
-=======
-      <CustomButton onClick={handleSignIn} type="submit">
-        SIGN IN
-      </CustomButton>
-    </div>
->>>>>>> master
   );
 };
 
