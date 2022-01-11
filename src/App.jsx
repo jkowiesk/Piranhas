@@ -13,6 +13,7 @@ import SignUp from "./pages/SignUp/SignUp";
 import { LoginProvider } from "./components/LoginContext/LoginContext";
 
 import "./App.scss";
+import FlashcardManger from "./pages/FlashcardManager/FlashcardManager";
 
 const App = () => {
   return (
@@ -25,9 +26,13 @@ const App = () => {
           <Route path="/signUp" element={<SignUp />} />
           <Route path="/card-form" element={<CardFormPage />} />
           <Route path="/my-courses" element={<MyCourses />} />
+          <Route path="/my-courses/add-course" element={<AddCourse />} />
           <Route path="/my-courses/:courseName" element={<SetManager />} />
           <Route path="/my-courses/:courseName/add-set" element={<AddSet />} />
-          <Route path="/my-courses/add-course" element={<AddCourse />} />
+          <Route
+            path="/my-courses/:courseName/:setName"
+            element={<FlashcardManger />}
+          />
         </Routes>
       </Layout>
     </LoginProvider>

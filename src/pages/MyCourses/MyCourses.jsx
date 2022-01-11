@@ -8,7 +8,9 @@ import UserService from "../../services/UserService";
 import s from "./MyCourses.module.scss";
 
 const MyCourses = () => {
-  console.log(UserService.getCourses());
+  UserService.getCourses().then((response) => {
+    console.log(response.data);
+  });
   const courses = myCourses.map(({ name, items }) => {
     return (
       <SetSection

@@ -6,7 +6,7 @@ import s from "./ItemList.module.scss";
 
 const ItemList = (props) => {
   const itemList = props.items.map(({ courseName, name }) => {
-    let routeUrl = `${props.rootRoute}${courseName}/${name}`;
+    const routeUrl = `${props.rootRoute}${courseName}/${name}`;
     return (
       <Set title={name} routeUrl={props.rootRoute ? routeUrl : `${name}`} />
     );
