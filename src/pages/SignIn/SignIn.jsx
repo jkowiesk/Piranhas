@@ -32,7 +32,7 @@ const SiginIn = () => {
   };
 
   return (
-    <SignForm title="Sign In" btnText="SIGN IN">
+    <SignForm title="Sign In" btnText="SIGN IN" onBtnClick={handleSignIn}>
       <InputText
         type="text"
         label="username"
