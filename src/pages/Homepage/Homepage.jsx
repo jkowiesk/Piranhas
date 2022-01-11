@@ -1,5 +1,6 @@
-import { myCourses, marketSets } from "../../mocks/courseCards";
 import ItemSection from "../../components/ItemSection/ItemSection";
+import UserService from "../../services/UserService";
+import { useEffect, useState } from "react";
 
 import s from "./Homepage.module.scss";
 
@@ -8,25 +9,31 @@ function randint(a) {
 }
 
 const HomePage = () => {
-  let sets = myCourses.map((course) => {
-    let num = randint(3);
-    return { courseName: course.name, name: course.items[num].name };
-  });
+  const [sets, setSets] = useState({ marketSets: [], mySets: [] });
+  useEffect(() => {
+    UserService.getPreview().then((response) => {
+      setSets(response.data);
+    });
+  }, []);
 
   return (
     <div>
-      <ItemSection
-        name="My Sets"
-        items={sets}
-        rootRoute="my-courses/"
-        type="carousel"
-      />
-      <ItemSection
-        name="Market Sets"
-        items={marketSets}
-        rootRoute="market/"
-        type="carousel"
-      />
+      {sets.mySets.length ? (
+        <ItemSection
+          name="My Sets"
+          items={sets.mySets}
+          rootRoute="my-courses/"
+          type="carousel"
+        />
+      ) : null}
+      {sets.marketSets.length ? (
+        <ItemSection
+          name="Market Sets"
+          items={sets.marketSets}
+          rootRoute="market/"
+          type="carousel"
+        />
+      ) : null}
     </div>
   );
 };

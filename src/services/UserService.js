@@ -1,14 +1,14 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/";
+const API_URL = "https://vast-sierra-17368.herokuapp.com/api/";
 
 class UserService {
   getPreview() {
-    return axios.get(API_URL, { headers: header() });
+    return axios.get(API_URL);
   }
 
   getCourses() {
-    return axios.get(API_URL + "my-courses/", { headers: header() });
+    return axios.get(API_URL + "my-courses", { headers: header() });
   }
 
   getCourseSet(courseName) {
@@ -23,27 +23,15 @@ class UserService {
     });
   }
 
-  getCourseFlashcards(courseName, setName) {
-    return axios.get(API_URL + `my-courses/${courseName}/${setName}`, {
-      headers: header(),
-    });
+  getMarketSets() {
+    return axios.get(API_URL + "market");
   }
-
-  getMarketSet() {
-    return axios.get(API_URL + "market/", { headers: header() });
-  }
-
-  getMarket() {
-    return axios.get(API_URL + "market/", { headers: header() });
-  }
-
-  getFlashcards;
 }
 
 function header() {
-  const account = JSON.parse(localStorage.getItem("account"));
-  if (account) {
-    return { token: account.token };
+  const token = localStorage.getItem("token");
+  if (token) {
+    return { token: token };
   } else {
     return {};
   }

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/auth/";
+const API_URL = "https://vast-sierra-17368.herokuapp.com/api/";
 
 class AuthService {
   register(email, username, password) {
@@ -11,30 +11,34 @@ class AuthService {
     });
   }
 
-  login(username, password) {
+  login(userName, password) {
     return axios
       .post(API_URL + "signin", {
-        username,
+        userName,
         password,
       })
       .then(
         (response) => {
           if (response.data) {
-            localStorage.setItem("account", JSON.stringify(response.data));
+            console.log(response.data);
+            localStorage.setItem("token", JSON.stringify(response.data));
           }
-
-          return response.data;
         },
         (error) => console.log(error)
       );
   }
 
+  isLogged() {
+    const token = localStorage.getItem("token");
+    return token == null ? false : true;
+  }
+
   logout() {
-    localStorage.removeItem("account");
+    localStorage.removeItem("token");
   }
 
   getUser() {
-    return JSON.parse(localStorage.getItem("account"));
+    return JSON.parse(localStorage.getItem("token"));
   }
 }
 

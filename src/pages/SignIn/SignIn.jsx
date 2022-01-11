@@ -1,10 +1,16 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import InputText from "../../components/InputText/InputText";
-import s from "./SignIn.module.scss";
 import CustomButton from "../../components/CustomButton/CustomButton";
+import AuthService from "../../services/AuthService";
+import { useIsLogged } from "../../components/LoginContext/LoginContext";
+
+import s from "./SignIn.module.scss";
 
 const SiginIn = () => {
   const [account, setAccount] = useState({ username: "", password: "" });
+  const navigate = useNavigate();
+  const [IsLogged, setIsLogged] = useIsLogged();
 
   const handleChange = (e) => {
     const { value, name } = e.target;
@@ -13,6 +19,18 @@ const SiginIn = () => {
       ...prevValue,
       [name]: value,
     }));
+  };
+
+  const handleSignIn = (e) => {
+    AuthService.login(account.username, account.password)
+      .then((response) => {
+        setIsLogged(true);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+        navigate("/");
+      });
   };
 
   return (
@@ -30,7 +48,9 @@ const SiginIn = () => {
         value={account.password}
         handleChange={handleChange}
       />
-      <CustomButton type="submit">SIGN IN</CustomButton>
+      <CustomButton onClick={handleSignIn} type="submit">
+        SIGN IN
+      </CustomButton>
     </div>
   );
 };

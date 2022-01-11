@@ -62,8 +62,24 @@
   font-weight: 600;
 }
 
+.logOut {
+  padding: 10px 15px;
+  font-size: large;
+  color: $color_white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 a.active,
 .category:hover,
 .category:active {
+  color: $color_light_red;
+}
+
+a.active,
+.logOut:hover,
+.logOut:active {
   color: $color_light_red;
 }

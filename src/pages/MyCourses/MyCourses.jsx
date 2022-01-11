@@ -3,10 +3,12 @@ import AddCardButton from "../../components/AddCardButton/AddCardButton";
 import SetSection from "../../components/SetSection/SetSection";
 import Card from "../../components/UI/Card/Card";
 import { myCourses } from "../../mocks/courseCards.js";
+import UserService from "../../services/UserService";
 
 import s from "./MyCourses.module.scss";
 
 const MyCourses = () => {
+  console.log(UserService.getCourses());
   const courses = myCourses.map(({ name, items }) => {
     return (
       <SetSection
