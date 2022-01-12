@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 
 import s from "./FlashcardManager.module.scss";
 import FlashcardSection from "../../components/FlashcardSection/FlashcardSection";
+import Card from "../../components/UI/Card/Card";
 
 const FlashcardManager = () => {
   const [flashcards, setFlashcards] = useState([]);
@@ -17,9 +18,9 @@ const FlashcardManager = () => {
   }, []);
 
   return (
-    <div className={s.wrapper}>
+    <Card className={s.wrapper} title="Flashcard Manager">
       <FlashcardSection flashcards={flashcards} type="list" />
-    </div>
+    </Card>
   );
 };
 
