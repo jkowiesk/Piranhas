@@ -1,39 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import AddCardButton from "../../components/AddCardButton/AddCardButton.jsx";
 import Set from "../../components/Set/Set.jsx";
 import Card from "../../components/UI/Card/Card.jsx";
+import UserService from "../../services/UserService.js";
 import { myCourses } from "../../mocks/courseCards.js";
-import s from "./SetManager.module.scss";
 import "swiper/swiper.min.css";
 
-const SetManager = () => {
-  const params = useParams();
-  const [{ items }] = myCourses.filter(
-    ({ name }) => name.toLowerCase() === params.courseName.toLowerCase()
-  );
+import s from "./SetManager.module.scss";
 
-  const sets = items.map(({ name }) => {
+const SetManager = () => {
+  const { courseName } = useParams();
+  const [mySets, setMySets] = useState([{ name: "loading" }]);
+  useEffect(() => {
+    UserService.getCourseSet(courseName).then((response) => {
+      setMySets(response.data);
+    });
+  }, []);
+
+  const sets = mySets.map(({ name }) => {
     return (
-    <SwiperSlide>
-      <Set title={name} routeUrl={name} />
-    </SwiperSlide>
+      <SwiperSlide>
+        <Set title={name} routeUrl={name} />
+      </SwiperSlide>
     );
   });
 
   return (
     <Card title="Set Manager" size="2">
       <div className={s.wrapper}>
-        <Swiper 
-          className={s.sets} 
-          direction={'vertical'} 
+        <Swiper
+          className={s.sets}
+          direction={"vertical"}
           spaceBetween={20}
           freeMode={true}
-          slidesPerView={'auto'}
-          loop={true} 
-        > 
-        {sets} 
+          slidesPerView={"auto"}
+          loop={true}
+        >
+          {sets}
         </Swiper>
         <span className={s.button}>
           <AddCardButton label="Add New Set" link="add-set" />{" "}

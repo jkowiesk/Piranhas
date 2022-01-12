@@ -3,11 +3,11 @@ import axios from "axios";
 const API_URL = "https://vast-sierra-17368.herokuapp.com/api/";
 
 class AuthService {
-  register(email, username, password) {
+  register(emailAddress, userName, password) {
     return axios.post(API_URL + "signup", {
-      username,
-      email,
+      userName,
       password,
+      emailAddress,
     });
   }
 
