@@ -4,7 +4,7 @@ const API_URL = "https://vast-sierra-17368.herokuapp.com/api/";
 
 class UserService {
   getPreview() {
-    return axios.get(API_URL);
+    return axios.get(API_URL, { headers: header() });
   }
 
   getCourses() {
@@ -18,8 +18,6 @@ class UserService {
   }
 
   getCourseFlashcards(courseName, setName) {
-    const URL = API_URL + `my-courses/${courseName}/${setName}`;
-    console.log(URL);
     return axios.get(API_URL + `my-courses/${courseName}/${setName}`, {
       headers: header(),
     });
@@ -27,6 +25,12 @@ class UserService {
 
   getMarketSets() {
     return axios.get(API_URL + "market");
+  }
+
+  postCourse(courseName) {
+    return axios.post(API_URL + `my-courses/add-course`, courseName, {
+      headers: header(),
+    });
   }
 }
 

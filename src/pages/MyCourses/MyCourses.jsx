@@ -10,7 +10,6 @@ const MyCourses = () => {
   const [myCourses, setMyCourses] = useState([]);
   useEffect(() => {
     UserService.getCourses().then((response) => {
-      console.log(response.data);
       setMyCourses(response.data);
     });
   }, []);

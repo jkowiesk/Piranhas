@@ -1,22 +1,42 @@
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import InputText from "../InputText/InputText";
+import UserService from "../../services/UserService";
+import CustomButton from "../CustomButton/CustomButton";
+import Card from "../UI/Card/Card";
+
 import s from "./CourseForm.module.scss";
 
-const CourseForm = () => {
+const CourseForm = ({ onClick }) => {
+  const navigate = useNavigate();
+  const [courseName, setCourseName] = useState("");
   const submitHandler = (event) => {
     event.preventDefault();
+    UserService.postCourse(courseName).then((response) => {
+      navigate("/my-courses");
+    });
+  };
 
-    console.log("submitted");
+  const handleChange = (e) => {
+    setCourseName(e.target.value);
   };
 
   return (
-    <form onSubmit={submitHandler}>
-      <div>
-        <div>
-          <label htmlFor="name">Course Name</label>
-          <input type="text" id="name" />
-        </div>
+    <Card
+      onSubmit={submitHandler}
+      size="2"
+      title="Course Form"
+      className={s.wrapper}
+    >
+      <div className={s.content}>
+        <InputText
+          label="Course Name"
+          type="text"
+          handleChange={handleChange}
+        />
       </div>
-      <button> Submit </button>
-    </form>
+      <CustomButton> Subbmit </CustomButton>
+    </Card>
   );
 };
 
