@@ -8,7 +8,6 @@ class UserService {
   }
 
   getCourses() {
-    console.log(header());
     return axios.get(API_URL + "my-courses", { headers: header() });
   }
 

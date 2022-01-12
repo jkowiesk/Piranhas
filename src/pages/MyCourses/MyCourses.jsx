@@ -1,21 +1,24 @@
-import React from "react";
 import AddCardButton from "../../components/AddCardButton/AddCardButton";
 import SetSection from "../../components/SetSection/SetSection";
 import Card from "../../components/UI/Card/Card";
-import { myCourses } from "../../mocks/courseCards.js";
+import { useState, useEffect } from "react";
 import UserService from "../../services/UserService";
 
 import s from "./MyCourses.module.scss";
 
 const MyCourses = () => {
-  UserService.getCourses().then((response) => {
-    console.log(response.data);
-  });
-  const courses = myCourses.map(({ name, items }) => {
+  const [myCourses, setMyCourses] = useState([]);
+  useEffect(() => {
+    UserService.getCourses().then((response) => {
+      console.log(response.data);
+      setMyCourses(response.data);
+    });
+  }, []);
+  const courses = myCourses.map(({ name, sets }) => {
     return (
       <SetSection
         courseName={name}
-        items={items}
+        items={sets}
         routeUrl={name.toLowerCase()}
       />
     );

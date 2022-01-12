@@ -9,10 +9,10 @@ function randint(a) {
 }
 
 const HomePage = () => {
-  console.log(UserService.getPreview());
   const [sets, setSets] = useState({ marketSets: [], mySets: [] });
   useEffect(() => {
     UserService.getPreview().then((response) => {
+      console.log(response);
       setSets(response.data);
     });
   }, []);
