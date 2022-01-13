@@ -19,7 +19,10 @@
 * Dodanie go do folderu “Zapisane zestawy”
 * Dodanie go do własnego kursu
 
+## Backend aplikacji w formie API działa na poniższej domenie:
+https://piranhas-flashcards.herokuapp.com/api/
 
 
 ## Schemat przedstawiający arichtekturę back-endu oraz relacje pomiędzy klasami
 ![BackendSchema](/uploads/bc5e306ed3f9db81a4c9094ed6285ba6/BackendSchema.png)
+
