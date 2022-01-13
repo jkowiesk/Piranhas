@@ -2,17 +2,19 @@ import { useState } from "react";
 import CustomButton from "../CustomButton/CustomButton";
 import InputText from "../InputText/InputText";
 import Card from "../UI/Card/Card";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import UserService from "../../services/UserService";
 import s from "./SetForm.module.scss";
 
 const SetForm = () => {
   const navigate = useNavigate();
+  const { courseName } = useParams();
   const [setName, setSetName] = useState("");
-  const submitHandler = (event) => {
+  const onClick = (event) => {
+    console.log("fajnie");
     event.preventDefault();
-    UserService.postCourse(setName).then((response) => {
-      navigate("/my-courses");
+    UserService.postSet(courseName, setName).then((response) => {
+      navigate(`/my-courses/${courseName}`);
     });
   };
 
@@ -21,22 +23,21 @@ const SetForm = () => {
   };
 
   return (
-    <Card
-      onSubmit={submitHandler}
-      size="2"
-      title="Set Form"
-      className={s.wrapper}
-    >
-      <div className={s.content}>
-        <InputText
-          label="Set Name"
-          type="text"
-          value={setName}
-          handleChange={handleChange}
-        />
-      </div>
-      <CustomButton> Submit </CustomButton>
-    </Card>
+    <form>
+      <Card size="2" title="Set Form" className={s.wrapper}>
+        <div className={s.content}>
+          <InputText
+            label="Set Name"
+            type="text"
+            value={setName}
+            handleChange={handleChange}
+          />
+        </div>
+        <CustomButton type="submit" onClick={onClick}>
+          Submit
+        </CustomButton>
+      </Card>
+    </form>
   );
 };
 
