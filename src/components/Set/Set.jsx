@@ -3,7 +3,7 @@ import s from "./Set.module.scss";
 
 const Set = ({ title, routeUrl, isPreview }) => {
   return (
-    <Link to={routeUrl.toLowerCase()}>
+    <Link to={routeUrl}>
       <div className={isPreview ? s.preview : s.normal}>
         <p className={s.title}>{title}</p>
       </div>

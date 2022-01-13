@@ -14,10 +14,13 @@ SwiperCore.use([Mousewheel]);
 
 export const SetsCarousel = (props) => {
   const sets = props.items.map(({ courseName, name }) => {
-    let routeUrl = `${props.rootRoute}${courseName}/${name}`;
+    const routeUrl =
+      courseName === "none"
+        ? `${props.rootRoute}/${name}`
+        : `${props.rootRoute}/${courseName}/${name}`;
     return (
       <SwiperSlide className={s.slide}>
-        <Set title={name} routeUrl={props.rootRoute ? routeUrl : `${name}`} />
+        <Set title={name} routeUrl={routeUrl} />
       </SwiperSlide>
     );
   });

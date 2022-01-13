@@ -41,7 +41,7 @@ const SetManager = () => {
           {sets}
         </Swiper>
         <span className={s.button}>
-          <AddCardButton label="Add New Set" link="add-set" />{" "}
+          <AddCardButton label="Add New Set" link="add-set" />
         </span>
       </div>
     </Card>

@@ -46,6 +46,16 @@ class UserService {
       }
     );
   }
+
+  postFlashcard(courseName, setName, flashcard) {
+    return axios.post(
+      API_URL + `my-courses/${courseName}/${setName}/add-flashcard`,
+      { front: flashcard.front, back: flashcard.back },
+      {
+        headers: header(),
+      }
+    );
+  }
 }
 
 function header() {
