@@ -12,7 +12,6 @@ const HomePage = () => {
   const [sets, setSets] = useState({ marketSets: [], mySets: [] });
   useEffect(() => {
     UserService.getPreview().then((response) => {
-      console.log(response);
       setSets(response.data);
     });
   }, []);
@@ -23,7 +22,7 @@ const HomePage = () => {
         <ItemSection
           name="My Sets"
           items={sets.mySets}
-          rootRoute="my-courses/"
+          rootRoute="my-courses"
           type="carousel"
         />
       ) : null}
@@ -31,7 +30,7 @@ const HomePage = () => {
         <ItemSection
           name="Market Sets"
           items={sets.marketSets}
-          rootRoute="market/"
+          rootRoute="market"
           type="carousel"
         />
       ) : null}
