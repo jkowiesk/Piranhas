@@ -20,6 +20,7 @@ const SiginIn = () => {
   };
 
   const handleSignIn = (e) => {
+    e.preventDefault();
     AuthService.login(account.username, account.password)
       .then((response) => {
         setIsLogged(true);

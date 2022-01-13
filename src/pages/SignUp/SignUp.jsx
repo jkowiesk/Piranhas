@@ -22,17 +22,17 @@ const SiginIn = () => {
     }));
   };
 
-  const handleSignUp = () => {
+  const handleSignUp = (e) => {
+    e.preventDefault();
     AuthService.register(account.email, account.username, account.password)
       .then((response) => {
-        navigate('/');
+        navigate("/");
       })
       .catch((error) => {
-        console.log(error)
-        navigate('/');
-      })
-
-  }
+        console.log(error);
+        navigate("/");
+      });
+  };
 
   return (
     <SignForm title="Sign Up" btnText="SIGN UP" onBtnClick={handleSignUp}>

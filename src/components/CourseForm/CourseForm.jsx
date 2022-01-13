@@ -7,11 +7,11 @@ import Card from "../UI/Card/Card";
 
 import s from "./CourseForm.module.scss";
 
-const CourseForm = ({ onClick }) => {
+const CourseForm = () => {
   const navigate = useNavigate();
   const [courseName, setCourseName] = useState("");
-  const submitHandler = (event) => {
-    event.preventDefault();
+  const onClick = (e) => {
+    e.preventDefault();
     UserService.postCourse(courseName).then((response) => {
       navigate("/my-courses");
     });
@@ -22,21 +22,21 @@ const CourseForm = ({ onClick }) => {
   };
 
   return (
-    <Card
-      onSubmit={submitHandler}
-      size="2"
-      title="Course Form"
-      className={s.wrapper}
-    >
-      <div className={s.content}>
-        <InputText
-          label="Course Name"
-          type="text"
-          handleChange={handleChange}
-        />
-      </div>
-      <CustomButton> Subbmit </CustomButton>
-    </Card>
+    <form>
+      <Card size="2" title="Course Form" className={s.wrapper}>
+        <div className={s.content}>
+          <InputText
+            label="Course Name"
+            type="text"
+            value={courseName}
+            handleChange={handleChange}
+          />
+        </div>
+        <CustomButton onClick={onClick} type="submit">
+          Submit
+        </CustomButton>
+      </Card>
+    </form>
   );
 };
 

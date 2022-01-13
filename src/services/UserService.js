@@ -28,9 +28,23 @@ class UserService {
   }
 
   postCourse(courseName) {
-    return axios.post(API_URL + `my-courses/add-course`, courseName, {
-      headers: header(),
-    });
+    return axios.post(
+      API_URL + `my-courses/add-course`,
+      { name: courseName },
+      {
+        headers: header(),
+      }
+    );
+  }
+
+  postSet(courseName, setName) {
+    return axios.post(
+      API_URL + `my-courses/${courseName}/add-set`,
+      { name: setName },
+      {
+        headers: header(),
+      }
+    );
   }
 }
 
