@@ -19,6 +19,7 @@ const Market = () => {
         name=""
         items={marketSets}
         type="list"
+        rootRoute="/market"
         className={s.content}
       />
     </Card>

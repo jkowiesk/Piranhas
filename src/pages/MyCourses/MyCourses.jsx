@@ -14,13 +14,7 @@ const MyCourses = () => {
     });
   }, []);
   const courses = myCourses.map(({ name, sets }) => {
-    return (
-      <SetSection
-        courseName={name}
-        items={sets}
-        routeUrl={name.toLowerCase()}
-      />
-    );
+    return <SetSection courseName={name} items={sets} routeUrl={name} />;
   });
 
   return (

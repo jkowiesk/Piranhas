@@ -11,9 +11,10 @@ import Market from "./pages/Market/Market";
 import SiginIn from "./pages/SignIn/SignIn";
 import SignUp from "./pages/SignUp/SignUp";
 import { LoginProvider } from "./components/LoginContext/LoginContext";
+import FlashcardManger from "./pages/FlashcardManager/FlashcardManager";
+import AddFlashcard from "./pages/AddFlashcard/AddFlashcard";
 
 import "./App.scss";
-import FlashcardManger from "./pages/FlashcardManager/FlashcardManager";
 
 const App = () => {
   return (
@@ -21,17 +22,21 @@ const App = () => {
       <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/my-courses" element={<MyCourses />} />
           <Route path="/market" element={<Market />} />
           <Route path="/signIn" element={<SiginIn />} />
           <Route path="/signUp" element={<SignUp />} />
           <Route path="/card-form" element={<CardFormPage />} />
-          <Route path="/my-courses" element={<MyCourses />} />
           <Route path="/my-courses/add-course" element={<AddCourse />} />
           <Route path="/my-courses/:courseName" element={<SetManager />} />
           <Route path="/my-courses/:courseName/add-set" element={<AddSet />} />
           <Route
             path="/my-courses/:courseName/:setName"
             element={<FlashcardManger />}
+          />
+          <Route
+            path="/my-courses/:courseName/:setName/add-flashcard"
+            element={<AddFlashcard />}
           />
         </Routes>
       </Layout>

@@ -1,12 +1,11 @@
-import ItemSection from "../../components/ItemSection/ItemSection";
 import UserService from "../../services/UserService";
 import { useParams } from "react-router-dom";
-
 import { useState, useEffect } from "react";
+import FlashcardSection from "../../components/FlashcardSection/FlashcardSection";
+import AddCardButton from "../../components/AddCardButton/AddCardButton";
+import Card from "../../components/UI/Card/Card";
 
 import s from "./FlashcardManager.module.scss";
-import FlashcardSection from "../../components/FlashcardSection/FlashcardSection";
-import Card from "../../components/UI/Card/Card";
 
 const FlashcardManager = () => {
   const [flashcards, setFlashcards] = useState([]);
@@ -18,8 +17,13 @@ const FlashcardManager = () => {
   }, []);
 
   return (
-    <Card className={s.wrapper} title="Flashcard Manager">
-      <FlashcardSection flashcards={flashcards} type="list" />
+    <Card title="Flashcard Manager" size="2">
+      <div className={s.wrapper}>
+        <FlashcardSection flashcards={flashcards} type="list" />
+        <span className={s.button}>
+          <AddCardButton label="Add New Flashcard" link="add-flashcard" />
+        </span>
+      </div>
     </Card>
   );
 };

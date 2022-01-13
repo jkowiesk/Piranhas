@@ -22,7 +22,7 @@ const HomePage = () => {
         <ItemSection
           name="My Sets"
           items={sets.mySets}
-          rootRoute="my-courses"
+          rootRoute="/my-courses"
           type="carousel"
         />
       ) : null}
@@ -30,7 +30,7 @@ const HomePage = () => {
         <ItemSection
           name="Market Sets"
           items={sets.marketSets}
-          rootRoute="market"
+          rootRoute="/market"
           type="carousel"
         />
       ) : null}

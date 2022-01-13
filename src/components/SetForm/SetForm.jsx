@@ -4,18 +4,24 @@ import InputText from "../InputText/InputText";
 import Card from "../UI/Card/Card";
 import { useNavigate, useParams } from "react-router-dom";
 import UserService from "../../services/UserService";
+
 import s from "./SetForm.module.scss";
 
 const SetForm = () => {
   const navigate = useNavigate();
   const { courseName } = useParams();
   const [setName, setSetName] = useState("");
+
   const onClick = (event) => {
-    console.log("fajnie");
     event.preventDefault();
-    UserService.postSet(courseName, setName).then((response) => {
-      navigate(`/my-courses/${courseName}`);
-    });
+
+    UserService.postSet(courseName, setName)
+      .then((response) => {
+        navigate(`/my-courses/${courseName}`);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   const handleChange = (e) => {
