@@ -11,9 +11,7 @@ import java.sql.*;
 
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Repository("DBContext")
 class DBContext implements AutoCloseable {
@@ -181,7 +179,6 @@ public class OracleDataAccessObject implements FlashcardsDAO, UsersDAO {
             ResultSet urs = upstmt.executeQuery();
             urs.next();
             user_id = urs.getInt(1);
-            System.out.println(user_id);
             PreparedStatement pstmt = conn.prepareStatement("SELECT set_id, s.name, c.name, s.private FROM sets s " +
                     "JOIN course_sets cs USING(set_id) " +
                     "JOIN courses c ON(cs.course_id = c.course_id) " +
@@ -388,15 +385,20 @@ public class OracleDataAccessObject implements FlashcardsDAO, UsersDAO {
             rs.next();
             int setId = rs.getInt(1);
 
+            pstmt= conn.prepareStatement("UPADATE sets SET private = ? WHERE set_id = ?");
+            pstmt.setInt(1, priv);
+            pstmt.setInt(2, setId);
+            pstmt.executeUpdate();
+            pstmt.close();
+            database.close();
 
-
-
+            return 0;
 
 
         } catch (SQLException e) {
             System.out.println(e);
+            return -1;
         }
-        return 0;
 
     }
 
@@ -438,17 +440,6 @@ public class OracleDataAccessObject implements FlashcardsDAO, UsersDAO {
 
             return  -1;
         }
-    }
-
-
-    @Override
-    public int removeSetFromCourse(String setName) {
-        return -1;
-    }
-
-    @Override
-    public int deleteSet(String setName) {
-        return 0;
     }
 
     @Override

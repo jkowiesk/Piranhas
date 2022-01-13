@@ -1,6 +1,5 @@
 package pap.project.piranhas.service;
 
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;

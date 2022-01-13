@@ -56,7 +56,6 @@ public class FlashcardsController {
                 if (code == -1) response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
         }
 
-//        @CrossOrigin
         @GetMapping(path = "/market")
         public List<Set> getMarketSets() {
                 return flashcardService.getAllPublicSets();
@@ -72,7 +71,6 @@ public class FlashcardsController {
                 }
         }
 
-//        @CrossOrigin
         @GetMapping(path = "/my-courses")
         public List<Course> getUserCourses() {
                 return flashcardService.getUserCourses();
@@ -82,13 +80,6 @@ public class FlashcardsController {
         public List<Set> getCourse(@PathVariable("courseName") String courseName) {
                 return flashcardService.getCourse(courseName);
         }
-
-//        @PostMapping(path = "/add-flashcard")
-//        public void addFlashcard(@RequestBody FlashcardRequest flashcardRequest, HttpServletResponse response) {
-//                Flashcard flashcard = new Flashcard(flashcardRequest.getFront(), flashcardRequest.getBack());
-//                int code = flashcardService.addFlashcard(flashcardRequest.getSetName(), flashcard);
-//                if (code == -1) response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-//        }
 
         @PostMapping(path = "/my-courses/{courseName}/add-set")
         public void addSet(@PathVariable("courseName") String courseName, @RequestBody AddRequest addRequest, HttpServletResponse response) {
