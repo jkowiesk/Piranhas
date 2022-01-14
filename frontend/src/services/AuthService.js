@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://vast-sierra-17368.herokuapp.com/api/";
+const API_URL = "https://piranhas-flashcards.herokuapp.com/api/";
 
 class AuthService {
   register(emailAddress, userName, password) {
