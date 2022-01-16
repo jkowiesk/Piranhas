@@ -8,10 +8,6 @@ import { useRef } from "react";
 import clsx from "clsx";
 import Card from "../UI/Card/Card";
 
-import SwiperCore, { Mousewheel } from "swiper/core";
-
-SwiperCore.use([Mousewheel]);
-
 export const SetsCarousel = (props) => {
   const sets = props.items.map(({ courseName, name }) => {
     const routeUrl =
