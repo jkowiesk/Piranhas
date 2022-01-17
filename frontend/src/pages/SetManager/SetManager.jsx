@@ -5,7 +5,6 @@ import AddCardButton from "../../components/AddCardButton/AddCardButton.jsx";
 import Set from "../../components/Set/Set.jsx";
 import Card from "../../components/UI/Card/Card.jsx";
 import UserService from "../../services/UserService.js";
-import { myCourses } from "../../mocks/courseCards.js";
 import "swiper/swiper.min.css";
 
 import s from "./SetManager.module.scss";
@@ -21,8 +20,8 @@ const SetManager = () => {
 
   const sets = mySets.map(({ name }) => {
     return (
-      <SwiperSlide>
-        <Set title={name} routeUrl={name} />
+      <SwiperSlide className={s.slider}>
+        <Set title={name} routeUrl={name}/>
       </SwiperSlide>
     );
   });
