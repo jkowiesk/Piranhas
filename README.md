@@ -26,3 +26,10 @@ https://piranhas-flashcards.herokuapp.com/api/
 ## Schemat przedstawiający arichtekturę back-endu oraz relacje pomiędzy klasami
 ![BackendSchema](/uploads/bc5e306ed3f9db81a4c9094ed6285ba6/BackendSchema.png)
 
+## Diagram Komunikacyjny UML
+![CommunicationUML](/uploads/accb6059e18f31a211b31c770a1c4dad/CommunicationUML.png)
+
+## Diagram Klas UML dla warstwy Persistence
+![ClassUML](/uploads/77dfe0c271d98092e6e70cf27a207837/ClassUML.png)
+
+
