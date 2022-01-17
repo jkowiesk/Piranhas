@@ -47,7 +47,7 @@ const PrivateHeader = ({ handleLogOut }) => (
           Market
         </NavLink>
       </li>
-      <li>
+      {/*       <li>
         <NavLink
           exact
           to="/card-form"
@@ -56,7 +56,7 @@ const PrivateHeader = ({ handleLogOut }) => (
         >
           Card Form
         </NavLink>
-      </li>
+      </li> */}
     </ul>
     <div className={s.categories}>
       <p className={s.logOut} onClick={handleLogOut}>

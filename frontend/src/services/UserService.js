@@ -27,6 +27,10 @@ class UserService {
     return axios.get(API_URL + "market");
   }
 
+  getMarketSet(setName) {
+    return axios.get(API_URL + `market/${setName}`);
+  }
+
   postCourse(courseName) {
     return axios.post(
       API_URL + `my-courses/add-course`,

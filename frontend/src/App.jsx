@@ -13,6 +13,7 @@ import SignUp from "./pages/SignUp/SignUp";
 import { LoginProvider } from "./components/LoginContext/LoginContext";
 import FlashcardManger from "./pages/FlashcardManager/FlashcardManager";
 import AddFlashcard from "./pages/AddFlashcard/AddFlashcard";
+import SetPreview from "./pages/SetPreview/SetPreview";
 
 import "./App.scss";
 
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/my-courses" element={<MyCourses />} />
           <Route path="/market" element={<Market />} />
+          <Route path="/market/:setName" element={<SetPreview />} />
           <Route path="/signIn" element={<SiginIn />} />
           <Route path="/signUp" element={<SignUp />} />
           <Route path="/card-form" element={<CardFormPage />} />
