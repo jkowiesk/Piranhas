@@ -71,15 +71,4 @@ class FlashcardsControllerIntegrationTest {
         mockMvc.perform(request).andExpect(status().isOk());
     }
 
-    @Test
-    void addFlashcard() {
-    }
-
-    @Test
-    void addSet() {
-    }
-
-    @Test
-    void addCourse() {
-    }
 }

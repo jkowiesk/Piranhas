@@ -20,6 +20,6 @@ public interface FlashcardsDAO {
     int addFlashcardToSet(String setName, String front, String back);
     int createCourse(String courseName, String userName);
     int setSetPrivacy(int priv, String setName, String userName);
-    int addSetToCourse(String setName, String courseName);
+    int addSetToCourse(String setName, int isPrivate, String courseName);
 
 }

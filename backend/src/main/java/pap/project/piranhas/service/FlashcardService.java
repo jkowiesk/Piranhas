@@ -39,6 +39,10 @@ public class FlashcardService {
 
     }
 
+    public Set getMarketSetByName(String setName) {
+        return flashcardsDao.getSetByName(setName);
+    }
+
     public Map<String, List<Set>> getPreviewSets() {
 
         int USER_SETS = 5;
@@ -97,9 +101,9 @@ public class FlashcardService {
         return flashcardsDao.getCourse(courseName).getSets();
     }
 
-    public int addNewSetToCourse(String setName, String courseName) {
+    public int addNewSetToCourse(String setName, int isPrivate, String courseName) {
 
-        return flashcardsDao.addSetToCourse(setName, courseName);
+        return flashcardsDao.addSetToCourse(setName, isPrivate, courseName);
     }
 
     public int createNewCourse(String courseName) {

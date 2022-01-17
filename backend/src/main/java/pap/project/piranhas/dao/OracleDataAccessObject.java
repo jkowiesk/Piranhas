@@ -403,7 +403,7 @@ public class OracleDataAccessObject implements FlashcardsDAO, UsersDAO {
     }
 
     @Override
-    public int addSetToCourse(String setName, String courseName) {
+    public int addSetToCourse(String setName, int isPrivate, String courseName) {
         try {
             Connection conn = database.getConnection();
 
@@ -415,10 +415,11 @@ public class OracleDataAccessObject implements FlashcardsDAO, UsersDAO {
             int ownerId = rs.getInt(2);
 
             pstmt = conn.prepareStatement(
-                    "INSERT INTO sets (name, owner_id) VALUES (?, ?)"
+                    "INSERT INTO sets (name, private, owner_id) VALUES (?, ?, ?)"
             );
             pstmt.setString(1, setName);
-            pstmt.setInt(2, ownerId);
+            pstmt.setInt(2, isPrivate);
+            pstmt.setInt(3, ownerId);
             pstmt.executeUpdate();
 
             pstmt = conn.prepareStatement("SELECT set_id FROM sets WHERE name = ?");

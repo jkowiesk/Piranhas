@@ -38,16 +38,19 @@ public class FlashcardsController {
         }
 
         @PostMapping(path = "/signin")
-        public String generateToken(@RequestBody AuthRequest authRequest) throws Exception {
+        public String generateToken(@RequestBody AuthRequest authRequest, HttpServletResponse response) throws Exception {
 
                 try {
                         authenticationManager.authenticate(
                                 new UsernamePasswordAuthenticationToken(authRequest.getUserName(), authRequest.getPassword())
                         );
+                        return jwtUtil.generateToken(authRequest.getUserName());
                 } catch (Exception e) {
-                        throw new Exception("Invalid username or password.");
+                        response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                        return "Invaild username or password";
                 }
-                return jwtUtil.generateToken(authRequest.getUserName());
+
+
         }
 
         @PostMapping(path = "/signup")
@@ -61,8 +64,18 @@ public class FlashcardsController {
                 return flashcardService.getAllPublicSets();
         }
 
-        @GetMapping(value = {"/market/{setName}", "/my-courses/{courseName}/{setName}"})
+        @GetMapping(path ="/market/{setName}")
         public List<Flashcard> getMarketSet(@PathVariable("setName") String setName, HttpServletResponse response) {
+                Set set = flashcardService.getMarketSetByName(setName);
+                if (set != null) return set.getFlashcards();
+                else {
+                        response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+                        return null;
+                }
+        }
+
+        @GetMapping(path = "/my-courses/{courseName}/{setName}")
+        public List<Flashcard> getUserSet(@PathVariable("setName") String setName, HttpServletResponse response) {
                 Set set = flashcardService.getSetByName(setName);
                 if (set != null) return set.getFlashcards();
                 else {
@@ -77,13 +90,13 @@ public class FlashcardsController {
         }
 
         @GetMapping(path = "/my-courses/{courseName}")
-        public List<Set> getCourse(@PathVariable("courseName") String courseName) {
+        public List<Set> getUserCourse(@PathVariable("courseName") String courseName) {
                 return flashcardService.getCourse(courseName);
         }
 
         @PostMapping(path = "/my-courses/{courseName}/add-set")
-        public void addSet(@PathVariable("courseName") String courseName, @RequestBody AddRequest addRequest, HttpServletResponse response) {
-                int code = flashcardService.addNewSetToCourse(addRequest.getName(), courseName);
+        public void addSet(@PathVariable("courseName") String courseName, @RequestBody SetRequest setRequest, HttpServletResponse response) {
+                int code = flashcardService.addNewSetToCourse(setRequest.getName(), setRequest.getIsPrivate(), courseName);
                 if (code == -1) response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
         }
 
