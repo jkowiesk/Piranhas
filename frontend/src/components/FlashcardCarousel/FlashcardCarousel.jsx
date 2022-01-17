@@ -7,7 +7,7 @@ import s from './FlashcardCarousel.module.scss';
 export const FlashcardCarousel = ({flashcards}) => {
     const flashcardList = flashcards.map(({ front, back }) => {
         return (
-          <SwiperSlide>
+          <SwiperSlide className={s.slider}>
             <Flashcard front={front} back={back} />
           </SwiperSlide>
         )
@@ -23,7 +23,6 @@ export const FlashcardCarousel = ({flashcards}) => {
           <ArrowButton rotate={true} />
         </div>
         <Swiper
-          slidesPerView={1}
           loop={true}
           onInit={(swiper) => {
             swiper.params.navigation.prevEl = prevRef.current;
