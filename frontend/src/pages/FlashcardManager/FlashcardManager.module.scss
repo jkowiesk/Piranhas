@@ -1,3 +1,5 @@
+@import "public/assets/styles/utils/vars.module.scss";
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -10,4 +12,9 @@
 .button {
   margin-top: 40px;
   text-align: center;
+}
+
+.typeButtons {
+  display: flex;
+  column-gap: $grid_gutter;
 }
