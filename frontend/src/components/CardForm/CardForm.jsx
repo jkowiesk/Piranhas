@@ -36,9 +36,8 @@ const CardForm = () => {
         </div>
       </div>
       <div className={s.inputBlock}>
-        <button type="button" className={s.button}>
-          {" "}
-          Subbmit{" "}
+        <button type="button" className={s.button} onClick={() => {}}>
+          Subbmit
         </button>
       </div>
     </form>
