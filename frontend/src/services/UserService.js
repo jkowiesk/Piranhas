@@ -41,7 +41,7 @@ class UserService {
     );
   }
 
-  postSet(courseName, setName) {
+  postSet(courseName, setName, isPrivate) {
     return axios.post(
       API_URL + `my-courses/${courseName}/add-set`,
       { name: setName },

@@ -11,11 +11,16 @@ const SetForm = () => {
   const navigate = useNavigate();
   const { courseName } = useParams();
   const [setName, setSetName] = useState("");
+  const [isPrivate, setIsPrivate] = useState(false);
 
-  const onClick = (event) => {
+  const onCheckboxClick = (event) => {
+    setIsPrivate(event.target.value);
+  };
+
+  const onSubmit = (event) => {
     event.preventDefault();
 
-    UserService.postSet(courseName, setName)
+    UserService.postSet(courseName, setName, isPrivate)
       .then((response) => {
         navigate(`/my-courses/${courseName}`);
       })
@@ -38,8 +43,10 @@ const SetForm = () => {
             value={setName}
             handleChange={handleChange}
           />
+          {/* <input type="checkbox" id="private" onClick={onCheckboxClick} />
+          <label for="private">Private</label> */}
         </div>
-        <CustomButton type="submit" onClick={onClick}>
+        <CustomButton type="submit" onClick={onSubmit}>
           Submit
         </CustomButton>
       </Card>

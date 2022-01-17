@@ -2,7 +2,6 @@ import UserService from "../../services/UserService";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import FlashcardSection from "../../components/FlashcardSection/FlashcardSection";
-import AddCardButton from "../../components/AddCardButton/AddCardButton";
 import Card from "../../components/UI/Card/Card";
 import CustomButton from "../../components/CustomButton/CustomButton";
 

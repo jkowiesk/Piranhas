@@ -11,7 +11,7 @@ class AuthService {
     });
   }
 
-  login(userName, password) {
+  login(userName, password, onSuccess, onError) {
     return axios
       .post(API_URL + "signin", {
         userName,
@@ -21,9 +21,10 @@ class AuthService {
         (response) => {
           if (response.data) {
             localStorage.setItem("token", JSON.stringify(response.data));
+            onSuccess(response);
           }
         },
-        (error) => console.log(error)
+        (error) => onError(error)
       );
   }
 

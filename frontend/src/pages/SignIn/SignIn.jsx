@@ -19,17 +19,19 @@ const SiginIn = () => {
     }));
   };
 
+  const onError = (error) => {
+    console.log(error);
+    navigate("/");
+  };
+
+  const onSuccess = (response) => {
+    setIsLogged(true);
+    navigate("/");
+  };
+
   const handleSignIn = (e) => {
     e.preventDefault();
-    AuthService.login(account.username, account.password)
-      .then((response) => {
-        setIsLogged(true);
-        navigate("/");
-      })
-      .catch((error) => {
-        console.log(error);
-        navigate("/");
-      });
+    AuthService.login(account.username, account.password, onSuccess, onError);
   };
 
   return (
