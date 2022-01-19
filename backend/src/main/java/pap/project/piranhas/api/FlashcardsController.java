@@ -106,10 +106,18 @@ public class FlashcardsController {
                 if (code == -1) response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
         }
 
+        @PutMapping(path = "/my-courses/{courseName}/{setName}/{flashcardId}")
+        public void updateFlashcard(@PathVariable("flashcardId") int flashcardId, @RequestBody FlashcardRequest flashcardRequest, HttpServletResponse response) {
+                int code = flashcardService.updateFlashcard(flashcardId, flashcardRequest.getFront(), flashcardRequest.getBack());
+                if (code == -1) response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+        }
+
         @PostMapping(path = "/my-courses/add-course")
         public void addCourse(@RequestBody AddRequest addRequest, HttpServletResponse response) {
                 int code = flashcardService.createNewCourse(addRequest.getName());
                 if (code == -1) response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
         }
+
+
 
 }

@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class FlashcardRequest {
 
-//    private String setName;
     private String front;
     private String back;
 

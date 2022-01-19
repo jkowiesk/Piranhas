@@ -18,8 +18,10 @@ public interface FlashcardsDAO {
     List<Course> getAllUserCourses(String userName);
 
     int addFlashcardToSet(String setName, String front, String back);
+    int updateFlashcard(int flashcardId, String front, String back);
     int createCourse(String courseName, String userName);
     int setSetPrivacy(int priv, String setName, String userName);
     int addSetToCourse(String setName, int isPrivate, String courseName);
+
 
 }

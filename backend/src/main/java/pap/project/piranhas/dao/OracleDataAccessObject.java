@@ -113,7 +113,7 @@ public class OracleDataAccessObject implements FlashcardsDAO, UsersDAO {
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                Flashcard flashcard = new Flashcard(rs.getString(2), rs.getString(3));
+                Flashcard flashcard = new Flashcard(rs.getInt(1), rs.getString(2), rs.getString(3));
                 set.addFlashcard(flashcard);
             }
             pstmt.close();
@@ -244,7 +244,6 @@ public class OracleDataAccessObject implements FlashcardsDAO, UsersDAO {
                     set.addFlashcard(flashcard);
                 }
                 fpstmt.close();
-                System.out.println(set.getName());
                 course.addSet(set);
             }
 
@@ -332,6 +331,27 @@ public class OracleDataAccessObject implements FlashcardsDAO, UsersDAO {
             pstmt.executeUpdate();
             System.out.println(front+ " " + " " + back + " " + setId);
 
+
+            return 0;
+        } catch (SQLException e) {
+            System.out.println(e);
+            return -1;
+        }
+    }
+
+    @Override
+    public int updateFlashcard(int flashcardId, String front, String back) {
+        try {
+            Connection conn = database.getConnection();
+
+            PreparedStatement pstmt = conn.prepareStatement(
+                    "UPDATE flashcards SET phrase = ?, definition = ? WHERE flashcard_id = ?"
+            );
+            pstmt.setString(1, front);
+            pstmt.setString(2, back);
+            pstmt.setInt(3, flashcardId);
+            pstmt.executeUpdate();
+            System.out.println(front+ " " + " " + back + " " + flashcardId);
 
             return 0;
         } catch (SQLException e) {

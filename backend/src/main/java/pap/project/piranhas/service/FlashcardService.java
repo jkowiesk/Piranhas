@@ -29,6 +29,10 @@ public class FlashcardService {
         return flashcardsDao.addFlashcardToSet(setName, flashcard.getFront(), flashcard.getBack());
     }
 
+    public int updateFlashcard(int flashcardId, String front, String back) {
+        return flashcardsDao.updateFlashcard(flashcardId, front, back);
+    }
+
     public List<Set> getAllPublicSets() { return flashcardsDao.getAllPublicSets(); }
 
     public Set getSetByName(String setName) {
