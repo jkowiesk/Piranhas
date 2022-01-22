@@ -14,15 +14,13 @@ const FlashcardForm = () => {
 
   const onClick = (event) => {
     event.preventDefault();
-    console.log(
-      UserService.postFlashcard(courseName, setName, flashcard)
-        .then((response) => {
-          navigate(`/my-courses/${courseName}/${setName}`);
-        })
-        .catch((error) => {
-          console.log(error);
-        })
-    );
+    UserService.postFlashcard(courseName, setName, flashcard)
+      .then((response) => {
+        navigate(`/my-courses/${courseName}/${setName}`);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   const handleChange = (e) => {

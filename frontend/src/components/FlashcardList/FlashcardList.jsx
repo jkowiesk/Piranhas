@@ -5,8 +5,8 @@ import Flashcard from "../Flashcard/Flashcard";
 import s from "./FlashcardList.module.scss";
 
 const FlashcardList = (props) => {
-  const flashcardList = props.flashcards.map(({ front, back }) => {
-    return <Flashcard front={front} back={back} />;
+  const flashcardList = props.flashcards.map(({ id, front, back }) => {
+    return <Flashcard id={id} front={front} back={back} mode={props.mode} />;
   });
 
   return (
