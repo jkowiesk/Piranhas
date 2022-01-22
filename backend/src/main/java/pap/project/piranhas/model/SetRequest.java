@@ -7,9 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class FlashcardRequest {
+public class SetRequest {
 
-    private String front;
-    private String back;
-
+    private String name;
+    private int isPrivate;
 }

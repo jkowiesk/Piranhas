@@ -11,9 +11,7 @@ import java.sql.*;
 
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Repository("DBContext")
 class DBContext implements AutoCloseable {
@@ -115,7 +113,7 @@ public class OracleDataAccessObject implements FlashcardsDAO, UsersDAO {
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                Flashcard flashcard = new Flashcard(rs.getString(2), rs.getString(3));
+                Flashcard flashcard = new Flashcard(rs.getInt(1), rs.getString(2), rs.getString(3));
                 set.addFlashcard(flashcard);
             }
             pstmt.close();
@@ -181,7 +179,6 @@ public class OracleDataAccessObject implements FlashcardsDAO, UsersDAO {
             ResultSet urs = upstmt.executeQuery();
             urs.next();
             user_id = urs.getInt(1);
-            System.out.println(user_id);
             PreparedStatement pstmt = conn.prepareStatement("SELECT set_id, s.name, c.name, s.private FROM sets s " +
                     "JOIN course_sets cs USING(set_id) " +
                     "JOIN courses c ON(cs.course_id = c.course_id) " +
@@ -247,7 +244,6 @@ public class OracleDataAccessObject implements FlashcardsDAO, UsersDAO {
                     set.addFlashcard(flashcard);
                 }
                 fpstmt.close();
-                System.out.println(set.getName());
                 course.addSet(set);
             }
 
@@ -343,6 +339,27 @@ public class OracleDataAccessObject implements FlashcardsDAO, UsersDAO {
         }
     }
 
+    @Override
+    public int updateFlashcard(int flashcardId, String front, String back) {
+        try {
+            Connection conn = database.getConnection();
+
+            PreparedStatement pstmt = conn.prepareStatement(
+                    "UPDATE flashcards SET phrase = ?, definition = ? WHERE flashcard_id = ?"
+            );
+            pstmt.setString(1, front);
+            pstmt.setString(2, back);
+            pstmt.setInt(3, flashcardId);
+            pstmt.executeUpdate();
+            System.out.println(front+ " " + " " + back + " " + flashcardId);
+
+            return 0;
+        } catch (SQLException e) {
+            System.out.println(e);
+            return -1;
+        }
+    }
+
 
     @Override
     public int createCourse(String courseName, String userName) {
@@ -388,20 +405,25 @@ public class OracleDataAccessObject implements FlashcardsDAO, UsersDAO {
             rs.next();
             int setId = rs.getInt(1);
 
+            pstmt= conn.prepareStatement("UPADATE sets SET private = ? WHERE set_id = ?");
+            pstmt.setInt(1, priv);
+            pstmt.setInt(2, setId);
+            pstmt.executeUpdate();
+            pstmt.close();
+            database.close();
 
-
-
+            return 0;
 
 
         } catch (SQLException e) {
             System.out.println(e);
+            return -1;
         }
-        return 0;
 
     }
 
     @Override
-    public int addSetToCourse(String setName, String courseName) {
+    public int addSetToCourse(String setName, int isPrivate, String courseName) {
         try {
             Connection conn = database.getConnection();
 
@@ -413,10 +435,11 @@ public class OracleDataAccessObject implements FlashcardsDAO, UsersDAO {
             int ownerId = rs.getInt(2);
 
             pstmt = conn.prepareStatement(
-                    "INSERT INTO sets (name, owner_id) VALUES (?, ?)"
+                    "INSERT INTO sets (name, private, owner_id) VALUES (?, ?, ?)"
             );
             pstmt.setString(1, setName);
-            pstmt.setInt(2, ownerId);
+            pstmt.setInt(2, isPrivate);
+            pstmt.setInt(3, ownerId);
             pstmt.executeUpdate();
 
             pstmt = conn.prepareStatement("SELECT set_id FROM sets WHERE name = ?");
@@ -438,17 +461,6 @@ public class OracleDataAccessObject implements FlashcardsDAO, UsersDAO {
 
             return  -1;
         }
-    }
-
-
-    @Override
-    public int removeSetFromCourse(String setName) {
-        return -1;
-    }
-
-    @Override
-    public int deleteSet(String setName) {
-        return 0;
     }
 
     @Override

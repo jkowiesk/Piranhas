@@ -1,6 +1,5 @@
 package pap.project.piranhas.service;
 
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -30,6 +29,10 @@ public class FlashcardService {
         return flashcardsDao.addFlashcardToSet(setName, flashcard.getFront(), flashcard.getBack());
     }
 
+    public int updateFlashcard(int flashcardId, String front, String back) {
+        return flashcardsDao.updateFlashcard(flashcardId, front, back);
+    }
+
     public List<Set> getAllPublicSets() { return flashcardsDao.getAllPublicSets(); }
 
     public Set getSetByName(String setName) {
@@ -38,6 +41,10 @@ public class FlashcardService {
 
         return flashcardsDao.getSetByNameSecure(setName, userName);
 
+    }
+
+    public Set getMarketSetByName(String setName) {
+        return flashcardsDao.getSetByName(setName);
     }
 
     public Map<String, List<Set>> getPreviewSets() {
@@ -98,9 +105,9 @@ public class FlashcardService {
         return flashcardsDao.getCourse(courseName).getSets();
     }
 
-    public int addNewSetToCourse(String setName, String courseName) {
+    public int addNewSetToCourse(String setName, int isPrivate, String courseName) {
 
-        return flashcardsDao.addSetToCourse(setName, courseName);
+        return flashcardsDao.addSetToCourse(setName, isPrivate, courseName);
     }
 
     public int createNewCourse(String courseName) {
