@@ -3,8 +3,6 @@ import { useParams } from "react-router-dom";
 import { SetsCarousel } from "../../components/SetsCarousel/SetsCarousel";
 import UserService from "../../services/UserService.js";
 
-import s from "./SetManager.module.scss";
-
 const SetManager = () => {
   const { courseName } = useParams();
   const [mySets, setMySets] = useState([]);
@@ -14,7 +12,9 @@ const SetManager = () => {
     });
   }, []);
 
-  return mySets.length ? <SetsCarousel items={mySets} /> : null;
+  return <>
+  {mySets.length && <SetsCarousel items={mySets} />}
+  </>
 };
 
 export default SetManager;
