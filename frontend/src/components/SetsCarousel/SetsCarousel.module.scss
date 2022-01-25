@@ -15,10 +15,10 @@
   align-items: center;
 }
 
-.slider {
+.slide {
   display: flex;
-  align-items: center;
-  margin: -$grid_gutter;
+  justify-content: center;
+  margin: 0 -30px;
 }
 
 .button {
