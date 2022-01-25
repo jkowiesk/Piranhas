@@ -12,9 +12,7 @@ const SetManager = () => {
     });
   }, []);
 
-  return <>
-  {mySets.length && <SetsCarousel items={mySets} />}
-  </>
+  return <SetsCarousel items={mySets} />;
 };
 
 export default SetManager;
