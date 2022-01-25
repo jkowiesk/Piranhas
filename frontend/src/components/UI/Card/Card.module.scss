@@ -1,28 +1,28 @@
 @import "public/assets/styles/utils/vars.module.scss";
 
 .wrapper {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 $grid_gutter;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 $grid_gutter;
 
-    &--0 {
-        max-width: 100%;
-        padding: 0;
-    }
+  &--0 {
+    max-width: 100%;
+    padding: 0;
+  }
 
-    &--1 {
-        max-width: $container_width_1 + 2 * $grid_gutter;
-      }
-    
-    &--2 {
-        max-width: $container_width_2 + 2 * $grid_gutter;
-    }
+  &--1 {
+    max-width: $container_width_1 + 2 * $grid_gutter;
+  }
+
+  &--2 {
+    max-width: $container_width_2 + 2 * $grid_gutter;
+  }
 }
 
 .title {
-    font-size: 32px;
-    font-weight: bold;
-    text-align: center;
-    padding: 40px 0;
-    color: $color_basic_black
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  padding: 40px 0;
+  color: $color_basic_black;
 }

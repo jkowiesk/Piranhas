@@ -10,7 +10,7 @@ import s from "./FlashcardManager.module.scss";
 
 const FlashcardManager = () => {
   const [flashcards, setFlashcards] = useState([]);
-  const [flashcardType, setFlashcardType] = useState('list')
+  const [flashcardType, setFlashcardType] = useState("list");
   const { courseName, setName } = useParams();
 
   useEffect(() => {
@@ -20,12 +20,12 @@ const FlashcardManager = () => {
   }, []);
 
   const onListType = () => {
-    setFlashcardType('list');
-  }
+    setFlashcardType("list");
+  };
 
   const onCarouselType = () => {
-    setFlashcardType('carousel');
-  }
+    setFlashcardType("carousel");
+  };
 
   return (
     <Card title="Flashcard Manager" size="2">
@@ -34,7 +34,11 @@ const FlashcardManager = () => {
           <CustomButton onClick={onListType}>List</CustomButton>
           <CustomButton onClick={onCarouselType}>Carousel</CustomButton>
         </div>
-        <FlashcardSection flashcards={flashcards} type={flashcardType} />
+        <FlashcardSection
+          flashcards={flashcards}
+          type={flashcardType}
+          mode="private"
+        />
         <span className={s.button}>
           <AddCardButton label="Add New Flashcard" link="add-flashcard" />
         </span>

@@ -1,0 +1,15 @@
+@import "public/assets/styles/utils/vars.module.scss";
+
+.wrapper {
+  .title {
+    font-weight: bold;
+    font-family: $font_family;
+  }
+
+  .content {
+    display: flex;
+    padding-bottom: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+}

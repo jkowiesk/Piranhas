@@ -60,6 +60,16 @@ class UserService {
       }
     );
   }
+
+  updateFlashcard(courseName, setName, flashcard) {
+    return axios.post(
+      API_URL + `my-courses/${courseName}/${setName}/${flashcard.id}`,
+      { front: flashcard.front, back: flashcard.back },
+      {
+        headers: header(),
+      }
+    );
+  }
 }
 
 function header() {
