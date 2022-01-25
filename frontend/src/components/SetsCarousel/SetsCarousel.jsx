@@ -7,8 +7,8 @@ import AddCardButton from "../AddCardButton/AddCardButton";
 
 import s from "./SetsCarousel.module.scss";
 
-export const SetsCarousel = (props) => {
-  const sets = props.items.map(({ name }) => {
+export const SetsCarousel = ({ items }) => {
+  const sets = items.map(({ name }) => {
     return (
       <SwiperSlide className={s.slide}>
         <Set title={name} routeUrl={name} />
@@ -19,16 +19,18 @@ export const SetsCarousel = (props) => {
   return (
     <Card title="Set Manager" size="2">
       <div className={s.wrapper}>
-        <Swiper
-          className={s.sets}
-          direction={"vertical"}
-          spaceBetween={20}
-          freeMode={true}
-          slidesPerView={"auto"}
-          loop={true}
-        >
-          {sets}
-        </Swiper>
+        {sets.length ? (
+          <Swiper
+            className={s.sets}
+            direction={"vertical"}
+            spaceBetween={20}
+            freeMode={true}
+            slidesPerView={"auto"}
+            loop={true}
+          >
+            {sets}
+          </Swiper>
+        ) : null}
         <span className={s.button}>
           <AddCardButton label="Add New Set" link="add-set" />
         </span>
