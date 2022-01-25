@@ -23,16 +23,14 @@ export const ModifyDialog = ({ id, open, onClose }) => {
   };
 
   const onClick = (event) => {
-    event.preventDefault();
-    console.log(
-      UserService.putFlashcard(courseName, setName, flashcard)
-        .then((response) => {
-          navigate(`/my-courses/${courseName}/${setName}`);
-        })
-        .catch((error) => {
-          console.log(error);
-        })
-    );
+    UserService.updateFlashcard(courseName, setName, flashcard)
+      .then((response) => {
+        window.location.reload();
+        navigate(`/my-courses/${courseName}/${setName}`);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
